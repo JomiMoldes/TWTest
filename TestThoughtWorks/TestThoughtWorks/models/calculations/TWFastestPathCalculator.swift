@@ -143,8 +143,7 @@ class TWFastestPathCalculator : TWPathCalculator {
             let connections = provider.connectionsForStationByLine(from, line: line)
             for connection in connections {
                 let distance = distanceBetweenTwoStationsInSameLine(from, connection, line)
-                let nextStation = NextStation(station: connection, line: line, distance: distance)
-                allConnections.append(nextStation)
+                allConnections.append(NextStation(station: connection, line: line, distance: distance))
             }
         }
         return allConnections.sorted{$0.distance < $1.distance}
