@@ -15,9 +15,6 @@ class TWFastestPathCalculator : TWPathCalculator {
 
 
     func calculate(_ from:TWStation,_ to:TWStation) -> TWPathResult {
-        guard from.id != to.id else {
-            fatalError("same station")
-        }
         if let commonLine = provider.sharedLine(from, to) {
             return calculateSameLine(from, to, commonLine)
         }
