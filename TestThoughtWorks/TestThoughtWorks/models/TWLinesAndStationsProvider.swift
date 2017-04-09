@@ -34,16 +34,6 @@ class TWLinesAndStationsProvider {
         return nil
     }
 
-    /*func connectionsForStation(_ station:TWStation) -> [TWStation] {
-        var connections = [TWStation]()
-        let lines = station.lines.flatMap{lineBy(id: $0)}
-        for line in lines {
-            let allStations = line.stationsOrder.flatMap{stationById(id: $0)}.filter{$0.id != station.id && $0.lines.count > 1}
-            connections.append(contentsOf: allStations)
-        }
-        return connections
-    } */
-
     func connectionsForStationByLine(_ station:TWStation, line:TWLine) -> [TWStation] {
         guard line.stationsOrder.index(of:station.id) != nil else {
             return []

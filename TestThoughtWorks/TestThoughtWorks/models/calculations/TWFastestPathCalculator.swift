@@ -60,6 +60,7 @@ class TWFastestPathCalculator : TWPathCalculator {
         let toConnections = connectionsByStation(to)
         let fromConnections = orderByMatches(connectionsByStation(from), toConnections)
 
+        var combinations = 0
         var stationsAmount = 0
         var stationsIds = [Int]()
         var lastConnection:NextStation?
@@ -72,6 +73,7 @@ class TWFastestPathCalculator : TWPathCalculator {
                     stationsAmount = q
                     stationsIds = [from.id] + stationsIdsToConnection
                     lastConnection = station
+                    combinations = 1
                 }
                 continue
             }
@@ -92,6 +94,7 @@ class TWFastestPathCalculator : TWPathCalculator {
                         stationsAmount = total
                         stationsIds = [from.id] + stationsIdsToConnection + totalIds
                         lastConnection = connection
+                        combinations = 2
                     }
                     continue
                 }
@@ -105,7 +108,7 @@ class TWFastestPathCalculator : TWPathCalculator {
         }
         let stations = stationsIds.map{ provider.stationById(id: $0) }.flatMap { $0 }
 
-        return TWPathResult(time: (stationsIds.count - 1) * 5, price: (stationsIds.count - 1)  * 1, stations: stations)
+        return TWPathResult(time: (stationsIds.count - 1) * 5, price: (stationsIds.count - 1 + combinations)  * 1, stations: stations)
     }
 
     private func orderByMatches(_ fromConnections:[NextStation],_ toConnections:[NextStation]) -> [NextStation] {
