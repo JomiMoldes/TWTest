@@ -27,7 +27,7 @@ class TWPathCalculatorTest : XCTestCase {
         }
     }
 
-    func testShouldReturnFastestPathWithStations() {
+    func testShouldReturnFastestPathWithStationsInSameLine() {
         let provider = makeProvider()
 
         for check in sameLineWithStations {
@@ -46,9 +46,9 @@ class TWPathCalculatorTest : XCTestCase {
             let from = provider.stationById(id: check["from"] as! Int)
             let to = provider.stationById(id: check["to"] as! Int)
             let result = makeSUT(provider: provider).calculate(from!, to!)
-//        XCTAssertEqual(result.price, 10)
             let stations = check["stations"] as! [Int]
             XCTAssertEqual(result.time, (stations.count - 1) * 5)
+            XCTAssertEqual(result.stations.map{$0.id}, stations)
         }
     }
 
@@ -62,6 +62,7 @@ class TWPathCalculatorTest : XCTestCase {
 //        XCTAssertEqual(result.price, 10)
             let stations = check["stations"] as! [Int]
             XCTAssertEqual(result.time, (stations.count - 1) * 5)
+            XCTAssertEqual(result.stations.map{$0.id}, stations)
 
         }
     }
@@ -84,7 +85,6 @@ class TWPathCalculatorTest : XCTestCase {
             [10,1,9,9],
             [2,5,3,3],
             [5,4,1,1],
-            [6,6,0,0],
             [1,11,1,1],
             [11,19,8,8],
             [33,9,3,3],
@@ -117,6 +117,11 @@ class TWPathCalculatorTest : XCTestCase {
     let sharedConnectionStations = [
             [
                     "from": 9,
+                    "to": 12,
+                    "stations": [9,8,7,6,5,4,3,2,1,11,12]
+            ],
+            [
+                    "from": 9,
                     "to": 11,
                     "stations": [9,8,7,6,5,4,3,2,1,11]
             ],
@@ -129,6 +134,11 @@ class TWPathCalculatorTest : XCTestCase {
                     "from": 22,
                     "to": 31,
                     "stations": [22,21,20,31]
+            ],
+            [
+                    "from": 8,
+                    "to": 18,
+                    "stations": [8,9,36,37,24,38,19,18]
             ]
 
     ]
@@ -143,6 +153,11 @@ class TWPathCalculatorTest : XCTestCase {
                     "from": 8,
                     "to": 23,
                     "stations": [8,9,36,37,24,23]
+            ],
+            [
+                    "from": 27,
+                    "to": 38,
+                    "stations": [27,28,29,4,30,31,20,21,22,23,24,38]
             ]
     ]
 
