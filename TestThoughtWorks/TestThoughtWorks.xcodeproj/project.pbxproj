@@ -22,12 +22,16 @@
 		45BAF6377026F7658052B426 /* TWInitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFDC944E4F645EC2D8C60 /* TWInitialView.swift */; };
 		45BAF63BD819E9F4E90F705B /* TWInitialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFE348A86111C1BA28686 /* TWInitialViewModel.swift */; };
 		45BAF6741A6BE29CEB78D3B4 /* TWLaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF4E416B3271C7BA74EC6 /* TWLaunchScreenViewController.swift */; };
+		45BAF750840ED9E30FE668A6 /* TWInputStationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45BAF28E0FEDC151A236C6EA /* TWInputStationView.xib */; };
 		45BAF78C90728B414B011796 /* TWFastestPathCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF174AFA3D3A871883B5C /* TWFastestPathCalculator.swift */; };
+		45BAF7DD52CAC1596FDF85BE /* TWLayoutExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFF7AF24423BC2098D962 /* TWLayoutExtensions.swift */; };
+		45BAF7EAF781CAA216FEF453 /* TWDesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFAF39F68352CBE16273C /* TWDesignableView.swift */; };
 		45BAF7ED68B333AE1089CC34 /* TWInitialViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF9B077C9D048D12E5C1A /* TWInitialViewTest.swift */; };
 		45BAF948AC926489625A8C0D /* TWLoadJSONOperationFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF306EDEB7D5549A286B0 /* TWLoadJSONOperationFake.swift */; };
 		45BAFABEABD38959323B6305 /* TWJSONLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF54256E8B0A47334DA2B /* TWJSONLoader.swift */; };
 		45BAFADD8C27A76D86C3B617 /* TWLinesParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF08894121B4EB2297F3E /* TWLinesParser.swift */; };
 		45BAFB64D937BB8C9B13E195 /* TWFileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF67B32042B60C92674D3 /* TWFileLoader.swift */; };
+		45BAFB6DB7427492D8F997A9 /* TWInputStationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFD93A34EDC952B571383 /* TWInputStationView.swift */; };
 		45BAFBBCCB203A196B38A552 /* TWInitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF88119E0523574596B98 /* TWInitialViewController.swift */; };
 		45BAFD3B647095EA4CB54AFD /* TWInitialView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 489051A11E9A93A90013AD68 /* TWInitialView.xib */; };
 		45BAFD3FE47D9E888D301F0F /* TWStationsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF39A24DDE9FCDB634EE2 /* TWStationsParser.swift */; };
@@ -64,6 +68,7 @@
 		45BAF16D01F5E163FE1A5C9B /* TWInitialViewControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWInitialViewControllerTest.swift; sourceTree = "<group>"; };
 		45BAF174AFA3D3A871883B5C /* TWFastestPathCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWFastestPathCalculator.swift; sourceTree = "<group>"; };
 		45BAF1D3DBD3CF1281D12E6B /* TWLoadJSONOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLoadJSONOperation.swift; sourceTree = "<group>"; };
+		45BAF28E0FEDC151A236C6EA /* TWInputStationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TWInputStationView.xib; sourceTree = "<group>"; };
 		45BAF306EDEB7D5549A286B0 /* TWLoadJSONOperationFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLoadJSONOperationFake.swift; sourceTree = "<group>"; };
 		45BAF3942594D246D87F2840 /* TWStationsParserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWStationsParserTest.swift; sourceTree = "<group>"; };
 		45BAF39A24DDE9FCDB634EE2 /* TWStationsParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWStationsParser.swift; sourceTree = "<group>"; };
@@ -79,12 +84,15 @@
 		45BAF976F494FF3DC5280B8C /* TWLinesParserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLinesParserTest.swift; sourceTree = "<group>"; };
 		45BAF9B077C9D048D12E5C1A /* TWInitialViewTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWInitialViewTest.swift; sourceTree = "<group>"; };
 		45BAF9FE998AC002AB295B47 /* TWLinesAndStationsProviderTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLinesAndStationsProviderTest.swift; sourceTree = "<group>"; };
+		45BAFAF39F68352CBE16273C /* TWDesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWDesignableView.swift; sourceTree = "<group>"; };
 		45BAFB603C514400D2FCBBB0 /* TWLoadJSONOperationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLoadJSONOperationTest.swift; sourceTree = "<group>"; };
 		45BAFBBE702400459DD4DAAB /* TWStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWStation.swift; sourceTree = "<group>"; };
+		45BAFD93A34EDC952B571383 /* TWInputStationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWInputStationView.swift; sourceTree = "<group>"; };
 		45BAFDC944E4F645EC2D8C60 /* TWInitialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWInitialView.swift; sourceTree = "<group>"; };
 		45BAFE348A86111C1BA28686 /* TWInitialViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWInitialViewModel.swift; sourceTree = "<group>"; };
 		45BAFF04D5C9DDDD87800824 /* TWLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLine.swift; sourceTree = "<group>"; };
 		45BAFF0744FFA5FD28F34519 /* TWLinesAndStationsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLinesAndStationsProvider.swift; sourceTree = "<group>"; };
+		45BAFF7AF24423BC2098D962 /* TWLayoutExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLayoutExtensions.swift; sourceTree = "<group>"; };
 		45BAFF94798FEB6B9910D942 /* TWTestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWTestHelper.swift; sourceTree = "<group>"; };
 		4677A0B84D44F8BA6A2BF88C /* Pods-TestThoughtWorksTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestThoughtWorksTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestThoughtWorksTests/Pods-TestThoughtWorksTests.debug.xcconfig"; sourceTree = "<group>"; };
 		489051781E980C470013AD68 /* TestThoughtWorks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestThoughtWorks.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +132,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		45BAF028262952B2AA3EDF5C /* inputs */ = {
+			isa = PBXGroup;
+			children = (
+				45BAFD93A34EDC952B571383 /* TWInputStationView.swift */,
+				45BAF28E0FEDC151A236C6EA /* TWInputStationView.xib */,
+			);
+			path = inputs;
+			sourceTree = "<group>";
+		};
 		45BAF045C79A8B2E481D16A1 /* operations */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				45BAF7D72B9497CF3F275038 /* TWArrayExtensions.swift */,
+				45BAFF7AF24423BC2098D962 /* TWLayoutExtensions.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -176,6 +194,8 @@
 				489051A11E9A93A90013AD68 /* TWInitialView.xib */,
 				45BAFE348A86111C1BA28686 /* TWInitialViewModel.swift */,
 				489051A31E9A9D710013AD68 /* TWLaunchScreenView.xib */,
+				45BAF028262952B2AA3EDF5C /* inputs */,
+				45BAFAF39F68352CBE16273C /* TWDesignableView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -416,6 +436,7 @@
 				489051A21E9A93A90013AD68 /* TWInitialView.xib in Resources */,
 				489051831E980C470013AD68 /* Assets.xcassets in Resources */,
 				45BAF4AA90338D956A548EF2 /* stations_test.json in Resources */,
+				45BAF750840ED9E30FE668A6 /* TWInputStationView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,6 +567,9 @@
 				45BAF3478023F0BF6D972D9A /* TWGlobalModels.swift in Sources */,
 				45BAF6741A6BE29CEB78D3B4 /* TWLaunchScreenViewController.swift in Sources */,
 				45BAF2DCD40F899657DEFFE1 /* TWLoadJSONOperation.swift in Sources */,
+				45BAFB6DB7427492D8F997A9 /* TWInputStationView.swift in Sources */,
+				45BAF7EAF781CAA216FEF453 /* TWDesignableView.swift in Sources */,
+				45BAF7DD52CAC1596FDF85BE /* TWLayoutExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
