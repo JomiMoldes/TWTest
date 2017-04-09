@@ -80,7 +80,9 @@ class TWLinesAndStationsProviderTest : XCTestCase {
         let data = jsonLoader().load(fileName: "stations_test")
         let stations = TWStationsParser().parse(data)
         let lines = TWLinesParser().parse(data)
-        return TWLinesAndStationsProvider(stations: stations, lines: lines)
+        let provider = TWLinesAndStationsProvider()
+        provider.setup(stations: stations, lines: lines)
+        return provider
     }
 
 }

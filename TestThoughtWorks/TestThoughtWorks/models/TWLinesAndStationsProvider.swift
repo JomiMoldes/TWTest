@@ -7,12 +7,12 @@ import Foundation
 
 class TWLinesAndStationsProvider {
 
-    let stations : [TWStation]
-    let lines : [TWLine]
+    var stations : [TWStation]!
+    var lines : [TWLine]!
     private var stationsDic = [Int:TWStation]()
     private var linesDic = [Int:TWLine]()
 
-    init(stations:[TWStation], lines: [TWLine]) {
+    func setup(stations:[TWStation], lines: [TWLine]) {
         self.stations = stations
         self.lines = lines
         parseByIds()
