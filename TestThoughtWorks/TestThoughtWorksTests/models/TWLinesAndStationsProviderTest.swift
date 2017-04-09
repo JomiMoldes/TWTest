@@ -38,6 +38,40 @@ class TWLinesAndStationsProviderTest : XCTestCase {
         XCTAssertEqual(station38?.name, "Trinity lane")
     }
 
+    func testShouldCheckIfStationsShareLine() {
+        let sut = makeSUT()
+
+        let line1 = sut.sharedLine(sut.stationById(id: 1)!, sut.stationById(id: 3)!)
+        XCTAssertEqual(line1?.id, 1)
+
+        let line2 = sut.sharedLine(sut.stationById(id: 1)!, sut.stationById(id: 9)!)
+        XCTAssertEqual(line2?.id, 1)
+
+        let line3 = sut.sharedLine(sut.stationById(id: 1)!, sut.stationById(id: 12)!)
+        XCTAssertEqual(line3?.id, 2)
+    }
+
+    func testShouldReturnsConnectionsInStationLines() {
+        let sut = makeSUT()
+
+        var station = sut.stationById(id: 2)
+        var line = sut.lineBy(id: 1)
+        var connections = sut.connectionsForStationByLine(station!, line:line!)
+        XCTAssertEqual(connections.count, 3)
+
+        station = sut.stationById(id: 1)
+        line = sut.lineBy(id: 1)
+        connections = sut.connectionsForStationByLine(station!, line:line!)
+        XCTAssertEqual(connections.count, 2)
+
+        station = sut.stationById(id: 9)
+        line = sut.lineBy(id: 1)
+        connections = sut.connectionsForStationByLine(station!, line:line!)
+        XCTAssertEqual(connections.count, 2)
+        XCTAssertEqual(connections[0].id, 1)
+        XCTAssertEqual(connections[1].id, 4)
+
+    }
 
 
 //MARK helpers

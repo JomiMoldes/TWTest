@@ -39,10 +39,31 @@ class TWPathCalculatorTest : XCTestCase {
         }
     }
 
-    func testShouldReturnFastestPathForDifferentLines() {
+    func testShouldReturnFastestPathForStationsThatSharedConnections() {
         let provider = makeProvider()
 
-        
+        for check in sharedConnectionStations {
+            let from = provider.stationById(id: check["from"] as! Int)
+            let to = provider.stationById(id: check["to"] as! Int)
+            let result = makeSUT(provider: provider).calculate(from!, to!)
+//        XCTAssertEqual(result.price, 10)
+            let stations = check["stations"] as! [Int]
+            XCTAssertEqual(result.time, (stations.count - 1) * 5)
+        }
+    }
+
+    func testShouldReturnFastestPathForStationsThatDoNotShareConnections() {
+         let provider = makeProvider()
+
+        for check in notSharedConnectionStations {
+            let from = provider.stationById(id: check["from"] as! Int)
+            let to = provider.stationById(id: check["to"] as! Int)
+            let result = makeSUT(provider: provider).calculate(from!, to!)
+//        XCTAssertEqual(result.price, 10)
+            let stations = check["stations"] as! [Int]
+            XCTAssertEqual(result.time, (stations.count - 1) * 5)
+
+        }
     }
 
 
@@ -71,26 +92,58 @@ class TWPathCalculatorTest : XCTestCase {
     ]
 
     let sameLineWithStations = [
-        [
-            "from":1,
-            "to":2,
-            "stations":[1,2]
-        ],
-        [
-                "from":1,
-                "to":4,
-                "stations":[1,2,3,4]
-        ],
-        [
-                "from":1,
-                "to":14,
-                "stations":[1,11,12,13,14]
-        ],
-        [
-                "from":16,
-                "to":13,
-                "stations":[16,15,14,13]
-        ]
+            [
+                    "from": 1,
+                    "to": 2,
+                    "stations": [1, 2]
+            ],
+            [
+                    "from": 1,
+                    "to": 4,
+                    "stations": [1, 2, 3, 4]
+            ],
+            [
+                    "from": 1,
+                    "to": 14,
+                    "stations": [1, 11, 12, 13, 14]
+            ],
+            [
+                    "from": 16,
+                    "to": 13,
+                    "stations": [16, 15, 14, 13]
+            ]
+    ]
+
+    let sharedConnectionStations = [
+            [
+                    "from": 9,
+                    "to": 11,
+                    "stations": [9,8,7,6,5,4,3,2,1,11]
+            ],
+            [
+                    "from": 5,
+                    "to": 12,
+                    "stations": [5,4,3,2,1,11,12]
+            ],
+            [
+                    "from": 22,
+                    "to": 31,
+                    "stations": [22,21,20,31]
+            ]
+
+    ]
+
+    let notSharedConnectionStations = [
+            [
+                    "from": 5,
+                    "to": 22,
+                    "stations": [5,4,30,31,20,21,22]
+            ],
+            [
+                    "from": 8,
+                    "to": 23,
+                    "stations": [8,9,36,37,24,23]
+            ]
     ]
 
 }
