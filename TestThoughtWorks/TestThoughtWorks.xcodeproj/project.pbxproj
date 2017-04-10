@@ -22,6 +22,7 @@
 		45BAF520C9364095BB8F4DA3 /* TWLinesAndStationsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFF0744FFA5FD28F34519 /* TWLinesAndStationsProvider.swift */; };
 		45BAF56C7E36FEA91FAB336E /* TWArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF7D72B9497CF3F275038 /* TWArrayExtensions.swift */; };
 		45BAF5D274D20135572738FD /* TWPathResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF7F9F967632B907659A6 /* TWPathResult.swift */; };
+		45BAF5EF87DD2529C389E55A /* TWInputStationViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFF6AAEEA677FEC492CEC /* TWInputStationViewTest.swift */; };
 		45BAF6377026F7658052B426 /* TWInitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFDC944E4F645EC2D8C60 /* TWInitialView.swift */; };
 		45BAF63BD819E9F4E90F705B /* TWInitialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFE348A86111C1BA28686 /* TWInitialViewModel.swift */; };
 		45BAF6741A6BE29CEB78D3B4 /* TWLaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF4E416B3271C7BA74EC6 /* TWLaunchScreenViewController.swift */; };
@@ -107,6 +108,7 @@
 		45BAFF04D5C9DDDD87800824 /* TWLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLine.swift; sourceTree = "<group>"; };
 		45BAFF0744FFA5FD28F34519 /* TWLinesAndStationsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLinesAndStationsProvider.swift; sourceTree = "<group>"; };
 		45BAFF5FE64BC09FC3861342 /* TWInitialViewModelFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWInitialViewModelFake.swift; sourceTree = "<group>"; };
+		45BAFF6AAEEA677FEC492CEC /* TWInputStationViewTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWInputStationViewTest.swift; sourceTree = "<group>"; };
 		45BAFF7AF24423BC2098D962 /* TWLayoutExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLayoutExtensions.swift; sourceTree = "<group>"; };
 		45BAFF94798FEB6B9910D942 /* TWTestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWTestHelper.swift; sourceTree = "<group>"; };
 		4677A0B84D44F8BA6A2BF88C /* Pods-TestThoughtWorksTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestThoughtWorksTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestThoughtWorksTests/Pods-TestThoughtWorksTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 			children = (
 				45BAFC731A92D58CE22D5A51 /* TWInputStationViewModelTest.swift */,
 				45BAF1CD311A9131B3F793BA /* TWInputStationViewModelFake.swift */,
+				45BAFF6AAEEA677FEC492CEC /* TWInputStationViewTest.swift */,
 			);
 			path = inputs;
 			sourceTree = "<group>";
@@ -627,6 +630,7 @@
 				45BAFDF06A7898E34EBAA7EE /* TWLinesAndStationsProviderFake.swift in Sources */,
 				45BAF1DD64F5B550CF33BF71 /* TWInputStationViewModelTest.swift in Sources */,
 				45BAF2DEA2D8CAE5F23F5517 /* TWInputStationViewModelFake.swift in Sources */,
+				45BAF5EF87DD2529C389E55A /* TWInputStationViewTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

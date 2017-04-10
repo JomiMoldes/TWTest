@@ -14,9 +14,11 @@ class TWLinesAndStationsProviderFake : TWLinesAndStationsProvider {
     var stationsFound : [TWStation]?
 
     override func stationByWord(_ withStart: String, completion: @escaping ([TWStation]) -> ()) {
+        let superCompletion = completion
         super.stationByWord(withStart, completion: {
             stations in
             self.stationsFound = stations
+            superCompletion(stations)
             self.searchExpectation?.fulfill()
         })
     }

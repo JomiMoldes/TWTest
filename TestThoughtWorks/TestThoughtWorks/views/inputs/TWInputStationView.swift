@@ -11,7 +11,7 @@ import RxCocoa
 class TWInputStationView : TWDesignableView {
 
     @IBOutlet weak var inputTextField: UITextField!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet var tableView: UITableView!
 
     var model : TWInputStationViewModel! {
         didSet {

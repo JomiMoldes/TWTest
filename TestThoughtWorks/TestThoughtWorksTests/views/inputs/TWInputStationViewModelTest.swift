@@ -24,13 +24,6 @@ class TWInputStationViewModelTest : XCTestCase {
 
         provider.searchExpectation = expectation(description: "search expectation")
 
-        sut.updateTableSubject.asObservable()
-            .subscribe(onNext:{
-                _ in
-//                updateTableExpectation.fulfill()
-            })
-            .addDisposableTo(disposable)
-
         sut.textHasChanged(str:"A")
 
         waitForExpectations(timeout: 1) {
@@ -49,12 +42,22 @@ class TWInputStationViewModelTest : XCTestCase {
 
         provider.searchExpectation = expectation(description: "search expectation")
 
-        sut.updateTableSubject.asObservable()
-                .subscribe(onNext:{
-                    _ in
-//                    updateTableExpectation.fulfill()
-                })
-                .addDisposableTo(disposable)
+        sut.textHasChanged(str:"Box")
+
+        waitForExpectations(timeout: 1) {
+            error in
+            if error != nil {
+                XCTFail()
+            }
+            XCTAssertEqual(stationsFound?.count, 2)
+        }
+    }
+
+    func testTable() {
+        let sut = makeSUT()
+        let view = makeView(sut:sut)
+
+        provider.searchExpectation = expectation(description: "search expectation")
 
         sut.textHasChanged(str:"Box")
 
@@ -64,8 +67,9 @@ class TWInputStationViewModelTest : XCTestCase {
                 XCTFail()
             }
             let stationsFound = self.provider.stationsFound
-            XCTAssertEqual(stationsFound?.count, 2)
+            XCTAssertEqual(view.tableView.numberOfRows(inSection: 0), 2)
         }
+        
     }
 
 
@@ -74,6 +78,15 @@ class TWInputStationViewModelTest : XCTestCase {
     private func makeSUT() -> TWInputStationViewModelFake {
         provider = makeProvider() as! TWLinesAndStationsProviderFake
         return TWInputStationViewModelFake(provider:provider)
+    }
+
+    private func makeView(sut:TWInputStationViewModelFake) -> TWInputStationView {
+        let view = TWInputStationView(frame: CGRect(x:1,y:1,width:1,height:1))
+        let table = UITableView(frame: view.frame, style: .grouped)
+        view.tableView = table
+        view.tableView.dataSource = sut
+        view.model = sut
+        return view
     }
 
 }
