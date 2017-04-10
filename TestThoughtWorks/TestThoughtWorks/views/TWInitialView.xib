@@ -65,7 +65,7 @@
                     </constraints>
                 </scrollView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="fXJ-AT-g0i" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="2HH-f2-8Yf"/>
                 <constraint firstItem="UY7-xF-W3A" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="1.1" id="3v2-2N-x1N"/>
