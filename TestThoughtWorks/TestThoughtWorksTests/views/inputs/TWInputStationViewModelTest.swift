@@ -16,16 +16,18 @@ class TWInputStationViewModelTest : XCTestCase {
 
     let disposable = DisposeBag()
 
+    var provider : TWLinesAndStationsProviderFake!
+
     func testProvider1() {
         let sut = makeSUT()
         XCTAssertNotNil(sut.provider)
 
-        let updateTableExpectation = expectation(description: "search expectation")
+        provider.searchExpectation = expectation(description: "search expectation")
 
         sut.updateTableSubject.asObservable()
             .subscribe(onNext:{
                 _ in
-                updateTableExpectation.fulfill()
+//                updateTableExpectation.fulfill()
             })
             .addDisposableTo(disposable)
 
@@ -36,8 +38,8 @@ class TWInputStationViewModelTest : XCTestCase {
             if error != nil {
                 XCTFail()
             }
-            let stationsFound = sut.stationsFiltered
-            XCTAssertEqual(stationsFound.count, 0)
+            let stationsFound = self.provider.stationsFound
+            XCTAssertEqual(stationsFound?.count, 0)
         }
     }
 
@@ -45,12 +47,12 @@ class TWInputStationViewModelTest : XCTestCase {
         let sut = makeSUT()
         XCTAssertNotNil(sut.provider)
 
-        let updateTableExpectation = expectation(description: "search expectation")
+        provider.searchExpectation = expectation(description: "search expectation")
 
         sut.updateTableSubject.asObservable()
                 .subscribe(onNext:{
                     _ in
-                    updateTableExpectation.fulfill()
+//                    updateTableExpectation.fulfill()
                 })
                 .addDisposableTo(disposable)
 
@@ -61,8 +63,8 @@ class TWInputStationViewModelTest : XCTestCase {
             if error != nil {
                 XCTFail()
             }
-            let stationsFound = sut.stationsFiltered
-            XCTAssertEqual(stationsFound.count, 2)
+            let stationsFound = self.provider.stationsFound
+            XCTAssertEqual(stationsFound?.count, 2)
         }
     }
 
@@ -70,7 +72,8 @@ class TWInputStationViewModelTest : XCTestCase {
 // helpers
 
     private func makeSUT() -> TWInputStationViewModelFake {
-        return TWInputStationViewModelFake(provider:makeProvider())
+        provider = makeProvider() as! TWLinesAndStationsProviderFake
+        return TWInputStationViewModelFake(provider:provider)
     }
 
 }

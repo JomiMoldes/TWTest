@@ -14,14 +14,30 @@ class TWInitialViewModel {
     let buttonYMultiplier:CGFloat = 0.8
 
     let updateConstraintsSubject = PublishSubject<Bool>()
+    let pathFoundSubject = PublishSubject<TWPathResult>()
 
     let fromInputModel : TWInputStationViewModel
     let toInputModel : TWInputStationViewModel
 
-    init() {
+    let calculator : TWPathCalculator
+
+    init(calculator:TWPathCalculator) {
+        self.calculator = calculator
         fromInputModel = TWInputStationViewModel(provider:TWGlobalModels.sharedInstance.stationsProvider)
         toInputModel = TWInputStationViewModel(provider:TWGlobalModels.sharedInstance.stationsProvider)
         addObservers()
+    }
+
+    func searchTapped() -> Bool {
+        guard let from = fromInputModel.selected,
+                let to = toInputModel.selected else {
+            return false
+        }
+        DispatchQueue.global(qos:.userInitiated).async {
+            let pathResult = self.calculator.calculate(from, to)
+            self.pathFoundSubject.onNext(pathResult)
+        }
+        return true
     }
 
     private func addObservers() {

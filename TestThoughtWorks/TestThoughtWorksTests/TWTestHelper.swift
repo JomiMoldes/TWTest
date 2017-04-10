@@ -15,7 +15,7 @@ func makeProvider() -> TWLinesAndStationsProvider {
     let data = jsonLoader().load(fileName: "stations_test")
     let stations = TWStationsParser().parse(data)
     let lines = TWLinesParser().parse(data)
-    let provider = TWLinesAndStationsProvider()
+    let provider = TWLinesAndStationsProviderFake()
     provider.setup(stations: stations, lines: lines)
     return provider
 }

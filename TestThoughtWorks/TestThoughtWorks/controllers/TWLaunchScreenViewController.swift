@@ -24,7 +24,7 @@ class TWLaunchScreenViewController : UIViewController {
     private func done() {
         DispatchQueue.main.async {
             let vc = TWInitialViewController(nibName: "TWInitialView", bundle: nil)
-            let initialModel = TWInitialViewModel()
+            let initialModel = TWInitialViewModel(calculator: TWFastestPathCalculator(provider: TWGlobalModels.sharedInstance.stationsProvider))
             vc.customView.model = initialModel
             self.navigationController?.pushViewController(vc, animated: false)
         }

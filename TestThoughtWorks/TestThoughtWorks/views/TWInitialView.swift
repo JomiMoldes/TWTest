@@ -33,6 +33,13 @@ class TWInitialView : UIView {
                     self.moveFieldsToTop()
                 })
                 .addDisposableTo(disposable)
+
+        model.pathFoundSubject.asObservable()
+                .subscribe(onNext:{ [unowned self] (result:TWPathResult) in
+                    print(result.time)
+                })
+                .addDisposableTo(disposable)
+
     }
 
     private func setup() {
@@ -58,5 +65,12 @@ class TWInitialView : UIView {
 
         self.layoutIfNeeded()
     }
+
+// IBActions
+
+    @IBAction func searchTapped(_ sender: UIButton) {
+        _ = model.searchTapped()
+    }
+    
 
 }

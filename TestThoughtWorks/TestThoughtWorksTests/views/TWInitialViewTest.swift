@@ -18,7 +18,7 @@ class TWInitialViewTest : XCTestCase  {
     override func setUp() {
         super.setUp()
         view = Bundle.main.loadNibNamed("TWInitialView", owner: self)?[0] as! TWInitialView
-        view.model = TWInitialViewModelFake()
+        view.model = TWInitialViewModelFake(calculator: TWFastestPathCalculator(provider:TWLinesAndStationsProviderFake()))
     }
 
 

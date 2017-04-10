@@ -16,6 +16,8 @@ class TWInputStationViewModel : NSObject, UITableViewDelegate, UITableViewDataSo
 
     var stationsFiltered = [TWStation]()
 
+    var selected : TWStation?
+
     init(provider:TWLinesAndStationsProvider) {
         self.provider = provider
     }
@@ -44,10 +46,10 @@ class TWInputStationViewModel : NSObject, UITableViewDelegate, UITableViewDataSo
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let station = stationsFiltered[(indexPath as IndexPath).item]
+        self.selected = stationsFiltered[(indexPath as IndexPath).item]
         stationsFiltered = [TWStation]()
         updateTableSubject.onNext(true)
-        stationSelectedSubject.onNext(station)
+        stationSelectedSubject.onNext(self.selected!)
     }
 
 }

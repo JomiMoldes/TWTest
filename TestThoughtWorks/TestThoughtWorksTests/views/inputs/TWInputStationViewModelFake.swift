@@ -14,5 +14,6 @@ import RxCocoa
 class TWInputStationViewModelFake : TWInputStationViewModel {
 
     var updateTableExpectation : XCTestExpectation?
+    var searchExpectation : XCTestExpectation?
 
 }
