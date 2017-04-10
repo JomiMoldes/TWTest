@@ -30,6 +30,15 @@ class TWInitialView : UIView {
         }
     }
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let resultFrame = CGRect(x: 0.0, y: 0.0, width: self.scrollView.frame.width, height: resultView.frame.height)
+        resultView.frame = resultFrame
+        model.viewResized()
+    }
+
+//Private
+
     private func bind() {
         model.updateConstraintsSubject.asObservable()
                 .subscribe(onNext:{ [unowned self] _ in
@@ -42,10 +51,6 @@ class TWInitialView : UIView {
                     self.drawResult(result)
                 })
                 .addDisposableTo(disposable)
-    }
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
     }
 
 
@@ -61,8 +66,6 @@ class TWInitialView : UIView {
         resultView.model = model.createResultMViewModel()
         self.scrollView.addSubview(resultView)
         scrollView.addConstraint(NSLayoutConstraint(item: resultView, attribute: .bottom, relatedBy: .equal, toItem: scrollView, attribute: .bottom, multiplier: 1.0, constant: 0))
-        scrollView.addConstraint(NSLayoutConstraint(item: resultView, attribute: .left, relatedBy: .equal, toItem: scrollView, attribute: .left, multiplier: 1.0, constant: 0))
-        scrollView.addConstraint(NSLayoutConstraint(item: resultView, attribute: .right, relatedBy: .equal, toItem: scrollView, attribute: .right, multiplier: 1.0, constant: 0))
     }
 
     private func drawResult(_ result:TWPathResult) {
@@ -94,6 +97,8 @@ class TWInitialView : UIView {
 
     @IBAction func searchTapped(_ sender: UIButton) {
         _ = model.searchTapped()
+        fromView.resign()
+        toView.resign()
     }
     
 

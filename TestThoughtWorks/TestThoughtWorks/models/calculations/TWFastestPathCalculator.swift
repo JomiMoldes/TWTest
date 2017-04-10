@@ -52,6 +52,57 @@ class TWFastestPathCalculator : TWPathCalculator {
         return stationsIds
     }
 
+    private func orderByMatches(_ fromConnections:[NextStation],_ toConnections:[NextStation]) -> [NextStation] {
+        let matches = sharedConnections(fromConnections, toConnections)
+
+        return fromConnections.sorted{ from, to in
+            let id = from.station.id
+            for match in matches {
+                if match.station.id == id {
+                    return true
+                }
+            }
+            return false
+        }
+    }
+
+    private func sharedConnections(_ fromConnections:[NextStation],_ toConnections:[NextStation]) -> [NextStation] {
+        let matches = toConnections.filter {
+            for station in fromConnections {
+                if station.station.id == $0.station.id {
+                    return true
+                }
+            }
+            return false
+        }
+
+        return matches
+    }
+
+    private func connectionsByStation(_ from:TWStation) -> [NextStation] {
+        var allConnections = [NextStation]()
+        let lines = from.lines.map{ provider.lineBy(id: $0) }.flatMap { $0 }
+
+        for line in lines {
+            let connections = provider.connectionsForStationByLine(from, line: line)
+            for connection in connections {
+                let distance = distanceBetweenTwoStationsInSameLine(from, connection, line)
+                allConnections.append(NextStation(station: connection, line: line, distance: distance))
+            }
+        }
+        return allConnections.sorted{$0.distance < $1.distance}
+    }
+
+    private func distanceBetweenTwoStationsInSameLine(_ from:TWStation, _ to:TWStation, _ line:TWLine) -> Int {
+        let order = line.stationsOrder
+        guard let fromIndex = order.index(of:from.id),
+              let toIndex = order.index(of:to.id) else {
+            fatalError("stations don't share this line")
+        }
+
+        return abs(toIndex - fromIndex)
+    }
+
     private func calculateDifferentLines(_ from:TWStation,_ to:TWStation) -> TWPathResult {
 
         let toConnections = connectionsByStation(to)
@@ -132,58 +183,6 @@ class TWFastestPathCalculator : TWPathCalculator {
             pathStations.append(pathStation)
         }
         return pathStations
-
-    }
-
-    private func orderByMatches(_ fromConnections:[NextStation],_ toConnections:[NextStation]) -> [NextStation] {
-        let matches = sharedConnections(fromConnections, toConnections)
-
-        return fromConnections.sorted{ from, to in
-            let id = from.station.id
-            for match in matches {
-                if match.station.id == id {
-                    return true
-                }
-            }
-            return false
-        }
-    }
-
-    private func sharedConnections(_ fromConnections:[NextStation],_ toConnections:[NextStation]) -> [NextStation] {
-        let matches = toConnections.filter {
-            for station in fromConnections {
-                if station.station.id == $0.station.id {
-                    return true
-                }
-            }
-            return false
-        }
-
-        return matches
-    }
-
-    private func connectionsByStation(_ from:TWStation) -> [NextStation] {
-        var allConnections = [NextStation]()
-        let lines = from.lines.map{ provider.lineBy(id: $0) }.flatMap { $0 }
-
-        for line in lines {
-            let connections = provider.connectionsForStationByLine(from, line: line)
-            for connection in connections {
-                let distance = distanceBetweenTwoStationsInSameLine(from, connection, line)
-                allConnections.append(NextStation(station: connection, line: line, distance: distance))
-            }
-        }
-        return allConnections.sorted{$0.distance < $1.distance}
-    }
-
-    private func distanceBetweenTwoStationsInSameLine(_ from:TWStation, _ to:TWStation, _ line:TWLine) -> Int {
-        let order = line.stationsOrder
-        guard let fromIndex = order.index(of:from.id),
-              let toIndex = order.index(of:to.id) else {
-            fatalError("stations don't share this line")
-        }
-
-        return abs(toIndex - fromIndex)
     }
 
 }

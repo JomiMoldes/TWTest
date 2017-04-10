@@ -27,20 +27,6 @@ class TWInputStationView : TWDesignableView {
         super.xibSetup()
     }
 
-
-//private
-
-    private func setup() {
-        tableView.delegate = model
-        tableView.dataSource = model
-
-        tableView.register(UINib(nibName: "TWStationNameViewCell", bundle: nil), forCellReuseIdentifier: "stationNameViewCell")
-        tableView.separatorColor = UIColor.clear
-
-        inputTextField.addTarget(self, action: #selector(textHasChanged(_:)), for: .editingChanged)
-
-    }
-
     override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
         for subview in subviews {
             if !subview.isHidden && subview.alpha > 0 && subview.isUserInteractionEnabled && subview.point(inside: convert(point, to: subview), with: event) {
@@ -54,6 +40,23 @@ class TWInputStationView : TWDesignableView {
         if let word = textField.text {
             model.textHasChanged(str: word)
         }
+    }
+
+    func resign() {
+        inputTextField.resignFirstResponder()
+    }
+
+//private
+
+    private func setup() {
+        tableView.delegate = model
+        tableView.dataSource = model
+
+        tableView.register(UINib(nibName: "TWStationNameViewCell", bundle: nil), forCellReuseIdentifier: "stationNameViewCell")
+        tableView.separatorColor = UIColor.clear
+
+        inputTextField.addTarget(self, action: #selector(textHasChanged(_:)), for: .editingChanged)
+
     }
 
     private func bind() {

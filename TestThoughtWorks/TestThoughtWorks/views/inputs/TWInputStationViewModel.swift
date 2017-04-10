@@ -41,7 +41,7 @@ class TWInputStationViewModel : NSObject, UITableViewDelegate, UITableViewDataSo
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "stationNameViewCell",for: indexPath as IndexPath) as! TWStationNameViewCell
         cell.setup(stationName: stationsFiltered[(indexPath as IndexPath).item].name)
-        cell.backgroundColor = UIColor.white.withAlphaComponent(0.5)
+        cell.backgroundColor = UIColor.white.withAlphaComponent(0.4)
         return cell
     }
 

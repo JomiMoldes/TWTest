@@ -21,6 +21,8 @@ class TWInitialViewModel {
 
     let calculator : TWPathCalculator
 
+    var lastResult : TWPathResult?
+
     init(calculator:TWPathCalculator) {
         self.calculator = calculator
         fromInputModel = TWInputStationViewModel(provider:TWGlobalModels.sharedInstance.stationsProvider)
@@ -36,8 +38,15 @@ class TWInitialViewModel {
         DispatchQueue.global(qos:.userInitiated).async {
             let pathResult = self.calculator.calculate(from, to)
             self.pathFoundSubject.onNext(pathResult)
+            self.lastResult = pathResult
         }
         return true
+    }
+
+    func viewResized() {
+        if let lastResult = lastResult {
+            self.pathFoundSubject.onNext(lastResult)
+        }
     }
 
     func createResultMViewModel() -> TWCityMapViewModel {
