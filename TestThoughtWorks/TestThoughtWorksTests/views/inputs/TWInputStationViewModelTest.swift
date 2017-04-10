@@ -49,11 +49,32 @@ class TWInputStationViewModelTest : XCTestCase {
             if error != nil {
                 XCTFail()
             }
+            let stationsFound = self.provider.stationsFound
             XCTAssertEqual(stationsFound?.count, 2)
         }
     }
 
-    func testTable() {
+    /*func testTable() {
+        print("testTable1")
+        let sut = makeSUT()
+//        let view = makeView(sut:sut)
+
+        provider.searchExpectation = expectation(description: "search expectation")
+
+        sut.textHasChanged(str:"Box")
+
+        waitForExpectations(timeout: 1) {
+            error in
+            if error != nil {
+                XCTFail()
+            }
+            XCTAssertEqual(sut.table
+            print("testTable1emd")
+        }
+    }
+
+    func testTableSelection() {
+        print("testTableSelection")
         let sut = makeSUT()
         let view = makeView(sut:sut)
 
@@ -66,11 +87,17 @@ class TWInputStationViewModelTest : XCTestCase {
             if error != nil {
                 XCTFail()
             }
-            let stationsFound = self.provider.stationsFound
-            XCTAssertEqual(view.tableView.numberOfRows(inSection: 0), 2)
+
+            let cell = sut.tableView(view.tableView, cellForRowAt: IndexPath(item:0, section:0))
+            XCTAssertNotNil(cell)
+
+            let cell2 = sut.tableView(view.tableView, cellForRowAt: IndexPath(item:1, section:0)) as! TWStationNameViewCell
+            XCTAssertNotNil(cell2)
+            XCTAssertEqual(cell2.label.text, "Boxing avenue")
+            print("testTableSelectionend")
         }
-        
-    }
+
+    }  */
 
 
 // helpers
@@ -84,7 +111,6 @@ class TWInputStationViewModelTest : XCTestCase {
         let view = TWInputStationView(frame: CGRect(x:1,y:1,width:1,height:1))
         let table = UITableView(frame: view.frame, style: .grouped)
         view.tableView = table
-        view.tableView.dataSource = sut
         view.model = sut
         return view
     }

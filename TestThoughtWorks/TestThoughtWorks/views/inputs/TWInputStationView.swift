@@ -71,11 +71,6 @@ class TWInputStationView : TWDesignableView {
                 [unowned self] station in
                 DispatchQueue.main.async {
                     self.inputTextField.text = station.name
-//                    self.view.frame = CGRect(x: self.view.frame.origin.x,
-//                            y: self.view.frame.origin.y,
-//                            width: self.view.frame.size.width,
-//                            height: 100)
-
 
                 }
             })
