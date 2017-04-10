@@ -4,17 +4,20 @@
 //
 
 import Foundation
+import UIKit
 
 struct TWLine {
 
     let id : Int
     let name : String
     let stationsOrder : [Int]
+    let color : UIColor
 
-    init(id:Int, name:String, order:[Int]) {
+    init(id:Int, name:String, order:[Int], color:UIColor) {
         self.id = id
         self.name = name
         self.stationsOrder = order
+        self.color = color
     }
 
 }

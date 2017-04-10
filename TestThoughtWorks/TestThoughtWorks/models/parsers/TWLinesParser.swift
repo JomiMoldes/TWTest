@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import UIKit
 
 class TWLinesParser {
 
@@ -18,9 +19,11 @@ class TWLinesParser {
 
                         guard let id = info["id"] as? Int,
                               let name = info["name"] as? String,
-                              let order = info["stationsOrder"] as? [Int] else { continue }
+                              let order = info["stationsOrder"] as? [Int],
+                              let colors = info["color"] as? [Int] else { continue }
 
-                        lines.append(TWLine(id: id, name: name, order: order))
+
+                        lines.append(TWLine(id: id, name: name, order: order, color: UIColor(red: CGFloat(colors[0]), green: CGFloat(colors[1]), blue: CGFloat(colors[2]), alpha: 1.0)))
                     }
                 }
             }

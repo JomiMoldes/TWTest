@@ -107,6 +107,7 @@ class TWCityMapViewModel {
         if let stations = result?.stations {
             let positions = allYPositions
             for i in 0..<stations.count {
+                let station: TWStationPath = stations[i]
                 let position = positions[i]
 
                 var point = CGPoint(x: labelLeftMargin / 2, y: position)
@@ -117,8 +118,8 @@ class TWCityMapViewModel {
 
                 let pointLayer = CAShapeLayer()
                 pointLayer.path = circle
-                pointLayer.fillColor = UIColor.blue.cgColor
-                pointLayer.strokeColor = UIColor.blue.cgColor
+                pointLayer.fillColor = station.line.color.cgColor
+                pointLayer.strokeColor = station.line.color.cgColor
                 dots.append(pointLayer)
             }
         }
@@ -150,7 +151,7 @@ class TWCityMapViewModel {
 
                 let layer = CAShapeLayer()
                 layer.lineWidth = linePathWidth
-                layer.strokeColor = UIColor.blue.cgColor
+                layer.strokeColor = station.line.color.cgColor
                 layer.path = path.cgPath
                 layer.lineCap = kCALineCapRound
                 lines.append(layer)
