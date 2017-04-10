@@ -19,9 +19,11 @@ class TWCityMapViewModel {
     let bottomMargin : CGFloat = 10.0
     let circlePointsSize : CGFloat = 10.0
     let separationBetweenLabels : CGFloat = 10.0
+    let titleLabelMargin : CGFloat = 10.0
     let linePathWidth : CGFloat = 2.0
 
     var totalHeight:CGFloat = 0
+    var titleHeight:CGFloat = 0
 
     var allYPositions = [CGFloat]()
 
@@ -69,12 +71,39 @@ class TWCityMapViewModel {
 
     }
 
+    func timeAndPrice(boxWidth:CGFloat) -> CATextLayer? {
+        guard let result = result else {
+            return nil
+        }
+        let maxWidth = boxWidth - (labelRightMargin * 2)
+        let pos = CGPoint(x: labelRightMargin, y: topMargin)
+        let description = "Time: \(result.time) mins, price: $\(result.price)"
+        let label = CATextLayer()
+        label.isWrapped = true
+
+        let attributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 14.0) as Any,
+                          NSForegroundColorAttributeName: UIColor.white
+        ]
+        let attString = NSAttributedString(string: description, attributes: attributes)
+
+        let stringHeight = attString.heightWithConstrainedWidth(width: maxWidth)
+        label.frame = CGRect(origin: pos, size: CGSize(width: maxWidth, height: stringHeight))
+
+        label.string = attString
+        label.backgroundColor = UIColor.clear.cgColor
+        label.contentsScale = UIScreen.main.scale
+        label.alignmentMode = kCAAlignmentCenter
+
+        titleHeight = stringHeight
+        return label
+    }
+
     func createLabels(boxWidth:CGFloat) -> [CATextLayer] {
         let maxWidth = boxWidth - labelLeftMargin - labelRightMargin
         var layers = [CATextLayer]()
         let descriptions = pathSteps()
 
-        var yPos:CGFloat = topMargin
+        var yPos:CGFloat = topMargin + titleHeight  + titleLabelMargin
         let alignmentMode = kCAAlignmentLeft
 
         allYPositions = [CGFloat]()

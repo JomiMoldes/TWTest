@@ -47,6 +47,7 @@ class TWCityMapView : UIView {
     }
 
     private func createLayers() {
+        metroLayers.append(TWMetroTitleLayer())
         metroLayers.append(TWMetroDirectionsLayer())
         metroLayers.append(TWMetroLineLayer())
         for metroLayer in metroLayers {

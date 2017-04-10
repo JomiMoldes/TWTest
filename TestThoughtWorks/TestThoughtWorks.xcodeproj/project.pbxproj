@@ -17,6 +17,7 @@
 		45BAF2DCD40F899657DEFFE1 /* TWLoadJSONOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF1D3DBD3CF1281D12E6B /* TWLoadJSONOperation.swift */; };
 		45BAF2DEA2D8CAE5F23F5517 /* TWInputStationViewModelFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF1CD311A9131B3F793BA /* TWInputStationViewModelFake.swift */; };
 		45BAF316513853D695D4CDBF /* TWStationsParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF3942594D246D87F2840 /* TWStationsParserTest.swift */; };
+		45BAF331197FA5B16E5BA9A7 /* TWMetroTitleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFCEC362894ABB6EF2106 /* TWMetroTitleLayer.swift */; };
 		45BAF3478023F0BF6D972D9A /* TWGlobalModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF926746DE6FCC850929A /* TWGlobalModels.swift */; };
 		45BAF35C0B06C0A420AAE10D /* TWLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFF04D5C9DDDD87800824 /* TWLine.swift */; };
 		45BAF49CF07F7062F89CA5B3 /* TWTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFF94798FEB6B9910D942 /* TWTestHelper.swift */; };
@@ -119,6 +120,7 @@
 		45BAFB603C514400D2FCBBB0 /* TWLoadJSONOperationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLoadJSONOperationTest.swift; sourceTree = "<group>"; };
 		45BAFBBE702400459DD4DAAB /* TWStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWStation.swift; sourceTree = "<group>"; };
 		45BAFC731A92D58CE22D5A51 /* TWInputStationViewModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWInputStationViewModelTest.swift; sourceTree = "<group>"; };
+		45BAFCEC362894ABB6EF2106 /* TWMetroTitleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWMetroTitleLayer.swift; sourceTree = "<group>"; };
 		45BAFD02E3E4EDE69DC49FFA /* TWCityMapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWCityMapViewModel.swift; sourceTree = "<group>"; };
 		45BAFD93A34EDC952B571383 /* TWInputStationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWInputStationView.swift; sourceTree = "<group>"; };
 		45BAFDB83405090206FE96A0 /* TWStationNameViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWStationNameViewCell.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				45BAF108AFC39108B476C202 /* TWMetroLineLayer.swift */,
 				45BAF2EACE8D3355D0995618 /* TWMetroDirectionsLayer.swift */,
 				45BAF87AFA704213E7E44FB9 /* TWMetroLayer.swift */,
+				45BAFCEC362894ABB6EF2106 /* TWMetroTitleLayer.swift */,
 			);
 			path = layers;
 			sourceTree = "<group>";
@@ -672,6 +675,7 @@
 				45BAF57EB65568BA5855D364 /* TWStationPath.swift in Sources */,
 				45BAF282657E06957430F2F1 /* TWStringExtensions.swift in Sources */,
 				45BAFBF6AE3FB166EB10963C /* UIBezierExtension.swift in Sources */,
+				45BAF331197FA5B16E5BA9A7 /* TWMetroTitleLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
