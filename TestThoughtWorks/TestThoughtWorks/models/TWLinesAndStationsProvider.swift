@@ -12,6 +12,8 @@ class TWLinesAndStationsProvider {
     private var stationsDic = [Int:TWStation]()
     private var linesDic = [Int:TWLine]()
 
+    private var searchingQueue : DispatchQueue?
+
     func setup(stations:[TWStation], lines: [TWLine]) {
         self.stations = stations
         self.lines = lines
@@ -40,6 +42,45 @@ class TWLinesAndStationsProvider {
         }
         return line.stationsOrder.flatMap{stationById(id: $0)}.filter{$0.id != station.id && $0.lines.count > 1}
     }
+
+    func stationByWord(_ withStart: String, completion: @escaping([TWStation]) -> ()) {
+        let startWord = withStart.lowercased()
+        guard startWord.characters.count > 0 else {
+            completion([TWStation]())
+            return
+        }
+
+        if self.searchingQueue == nil {
+            self.searchingQueue = DispatchQueue(label: "filtering_stations", qos: .background)
+        }
+
+        self.searchingQueue!.async {
+            guard var list = self.stations else {
+                completion([])
+                return
+            }
+            
+            list = list.filter {
+                let stationName = $0.name
+                let strQ = startWord.characters.count
+
+                guard stationName.characters.count >= strQ else {
+                    return false
+                }
+
+                let index = stationName.index(stationName.startIndex, offsetBy: strQ)
+                let firstLetters = stationName.substring(to: index).lowercased()
+                return firstLetters == startWord
+            }
+            list = list.sorted{
+                $0.name < $1.name
+            }
+
+            completion(list)
+        }
+    }
+
+// Private
 
     private func parseByIds() {
         for line in lines {

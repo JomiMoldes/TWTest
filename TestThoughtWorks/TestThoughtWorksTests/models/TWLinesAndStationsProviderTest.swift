@@ -73,14 +73,89 @@ class TWLinesAndStationsProviderTest : XCTestCase {
 
     }
 
+    func testShouldReturnStationByWord1() {
+        let sut = makeSUT()
+        sut.searchExpectation = expectation(description: "search expectation")
+
+        let expected = ["Boxers street","Boxing avenue"]
+        sut.stationByWord("Box", completion: { _ in })
+
+        waitForExpectations(timeout: 1) {
+            error in
+            if error != nil {
+                XCTFail()
+            }
+            if let stationsFound = sut.stationsFound {
+                XCTAssertFalse(stationsFound.isEmpty)
+                for i in 0..<stationsFound.count {
+                    XCTAssertEqual(stationsFound[i].name, expected[i])
+                }
+            }
+        }
+    }
+
+    func testShouldReturnStationByWord2() {
+        let sut = makeSUT()
+        sut.searchExpectation = expectation(description: "search expectation")
+        sut.stationByWord("", completion: { _ in })
+
+        waitForExpectations(timeout: 1) {
+            error in
+            if error != nil {
+                XCTFail()
+            }
+            if let found = sut.stationsFound {
+                XCTAssertTrue(found.isEmpty)
+            }
+        }
+    }
+
+    func testShouldReturnStationByWord3() {
+        let sut = makeSUT()
+        sut.searchExpectation = expectation(description: "search expectation")
+        sut.stationByWord("A", completion: { _ in })
+
+        waitForExpectations(timeout: 1) {
+            error in
+            if error != nil {
+                XCTFail()
+            }
+            if let found = sut.stationsFound {
+                XCTAssertTrue(found.isEmpty)
+            }
+        }
+    }
+
+    func testShouldReturnStationByWord4() {
+        let sut = makeSUT()
+        sut.searchExpectation = expectation(description: "search expectation")
+
+        let expected = ["Neo lane","Newton bath tub", "North Park"]
+        sut.stationByWord("N", completion: { _ in })
+
+        waitForExpectations(timeout: 1) {
+            error in
+            if error != nil {
+                XCTFail()
+            }
+            if let stationsFound = sut.stationsFound {
+                XCTAssertFalse(stationsFound.isEmpty)
+                for i in 0..<stationsFound.count {
+                    XCTAssertEqual(stationsFound[i].name, expected[i])
+                }
+            }
+        }
+
+    }
+
 
 //MARK helpers
 
-    private func makeSUT() -> TWLinesAndStationsProvider {
+    private func makeSUT() -> TWLinesAndStationsProviderFake {
         let data = jsonLoader().load(fileName: "stations_test")
         let stations = TWStationsParser().parse(data)
         let lines = TWLinesParser().parse(data)
-        let provider = TWLinesAndStationsProvider()
+        let provider = TWLinesAndStationsProviderFake()
         provider.setup(stations: stations, lines: lines)
         return provider
     }
