@@ -7,11 +7,14 @@ import Foundation
 import RxCocoa
 import RxSwift
 
-class TWInputStationViewModel {
+class TWInputStationViewModel : NSObject, UITableViewDelegate, UITableViewDataSource {
 
     let provider : TWLinesAndStationsProvider
 
-    let updateTableSubject = PublishSubject<[TWStation]>()
+    let updateTableSubject = PublishSubject<Bool>()
+    let stationSelectedSubject = PublishSubject<TWStation>()
+
+    var stationsFiltered = [TWStation]()
 
     init(provider:TWLinesAndStationsProvider) {
         self.provider = provider
@@ -20,11 +23,31 @@ class TWInputStationViewModel {
     func textHasChanged(str:String) {
         self.provider.stationByWord(str, completion: {
             stations in
-            self.updateTableSubject.onNext(stations)
+            self.stationsFiltered = stations
+            self.updateTableSubject.onNext(true)
         })
     }
-    
 
 
+// Data Source
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        tableView.isHidden = self.stationsFiltered.count == 0
+        return self.stationsFiltered.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "stationNameViewCell",for: indexPath as IndexPath) as! TWStationNameViewCell
+        cell.setup(stationName: stationsFiltered[(indexPath as IndexPath).item].name)
+        cell.backgroundColor = UIColor.white.withAlphaComponent(0.5)
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let station = stationsFiltered[(indexPath as IndexPath).item]
+        stationsFiltered = [TWStation]()
+        updateTableSubject.onNext(true)
+        stationSelectedSubject.onNext(station)
+    }
 
 }

@@ -12,6 +12,8 @@ import XCTest
 
 class TWInputStationViewModelTest : XCTestCase {
 
+    var view : TWInputStationView!
+
     let disposable = DisposeBag()
 
     func testProvider1() {
@@ -19,12 +21,10 @@ class TWInputStationViewModelTest : XCTestCase {
         XCTAssertNotNil(sut.provider)
 
         let updateTableExpectation = expectation(description: "search expectation")
-        var stationsFound = [TWStation]()
 
         sut.updateTableSubject.asObservable()
             .subscribe(onNext:{
-                stations in
-                stationsFound = stations
+                _ in
                 updateTableExpectation.fulfill()
             })
             .addDisposableTo(disposable)
@@ -36,6 +36,7 @@ class TWInputStationViewModelTest : XCTestCase {
             if error != nil {
                 XCTFail()
             }
+            let stationsFound = sut.stationsFiltered
             XCTAssertEqual(stationsFound.count, 0)
         }
     }
@@ -45,12 +46,10 @@ class TWInputStationViewModelTest : XCTestCase {
         XCTAssertNotNil(sut.provider)
 
         let updateTableExpectation = expectation(description: "search expectation")
-        var stationsFound = [TWStation]()
 
         sut.updateTableSubject.asObservable()
                 .subscribe(onNext:{
-                    stations in
-                    stationsFound = stations
+                    _ in
                     updateTableExpectation.fulfill()
                 })
                 .addDisposableTo(disposable)
@@ -62,6 +61,7 @@ class TWInputStationViewModelTest : XCTestCase {
             if error != nil {
                 XCTFail()
             }
+            let stationsFound = sut.stationsFiltered
             XCTAssertEqual(stationsFound.count, 2)
         }
     }

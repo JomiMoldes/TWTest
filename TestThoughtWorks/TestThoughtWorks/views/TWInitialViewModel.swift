@@ -15,7 +15,12 @@ class TWInitialViewModel {
 
     let updateConstraintsSubject = PublishSubject<Bool>()
 
+    let fromInputModel : TWInputStationViewModel
+    let toInputModel : TWInputStationViewModel
+
     init() {
+        fromInputModel = TWInputStationViewModel(provider:TWGlobalModels.sharedInstance.stationsProvider)
+        toInputModel = TWInputStationViewModel(provider:TWGlobalModels.sharedInstance.stationsProvider)
         addObservers()
     }
 

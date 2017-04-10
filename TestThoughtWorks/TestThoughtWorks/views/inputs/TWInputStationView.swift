@@ -5,19 +5,80 @@
 
 import Foundation
 import UIKit
+import RxSwift
+import RxCocoa
 
 class TWInputStationView : TWDesignableView {
 
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
+
+    var model : TWInputStationViewModel! {
+        didSet {
+            self.setup()
+            self.bind()
+        }
+    }
+
+    let disposable = DisposeBag()
     
     override func xibSetup() {
         nibName = "TWInputStationView"
         super.xibSetup()
-        hideTables()
     }
 
-    private func hideTables() {
-        tableView.isHidden = true
+
+//private
+
+    private func setup() {
+        tableView.delegate = model
+        tableView.dataSource = model
+
+        tableView.register(UINib(nibName: "TWStationNameViewCell", bundle: nil), forCellReuseIdentifier: "stationNameViewCell")
+        tableView.separatorColor = UIColor.clear
+
+        inputTextField.addTarget(self, action: #selector(textHasChanged(_:)), for: .editingChanged)
+
+    }
+
+    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        for subview in subviews {
+            if !subview.isHidden && subview.alpha > 0 && subview.isUserInteractionEnabled && subview.point(inside: convert(point, to: subview), with: event) {
+                return true
+            }
+        }
+        return false
+    }
+
+    func textHasChanged(_ textField:UITextField) {
+        if let word = textField.text {
+            model.textHasChanged(str: word)
+        }
+    }
+
+    private func bind() {
+        model.updateTableSubject.asObservable()
+            .subscribe(onNext:{
+                [unowned self] _ in
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            })
+            .addDisposableTo(disposable)
+
+        model.stationSelectedSubject.asObservable()
+            .subscribe(onNext:{
+                [unowned self] station in
+                DispatchQueue.main.async {
+                    self.inputTextField.text = station.name
+//                    self.view.frame = CGRect(x: self.view.frame.origin.x,
+//                            y: self.view.frame.origin.y,
+//                            width: self.view.frame.size.width,
+//                            height: 100)
+
+
+                }
+            })
+            .addDisposableTo(disposable)
     }
 }

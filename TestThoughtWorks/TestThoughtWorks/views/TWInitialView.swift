@@ -36,8 +36,8 @@ class TWInitialView : UIView {
     }
 
     private func setup() {
-
-        
+        fromView.model = model.fromInputModel
+        toView.model = model.toInputModel
     }
 
     private func moveFieldsToTop() {
