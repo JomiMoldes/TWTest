@@ -51,9 +51,9 @@
                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="xx8-dH-N2Y"/>
                     </constraints>
                 </view>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fXJ-AT-g0i" userLabel="scrollView">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fXJ-AT-g0i" userLabel="scrollView">
                     <rect key="frame" x="87" y="444" width="240" height="272"/>
-                    <color key="backgroundColor" red="0.64000000000000001" green="0.67000000000000004" blue="0.69999999999999996" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="240" id="wfO-Yg-B37"/>
                     </constraints>

@@ -42,8 +42,12 @@ class TWInitialView : UIView {
                     self.drawResult(result)
                 })
                 .addDisposableTo(disposable)
-
     }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+    }
+
 
     private func setup() {
         fromView.model = model.fromInputModel
@@ -54,9 +58,11 @@ class TWInitialView : UIView {
     private func setupResultView() {
         let resultFrame = CGRect(x: 0.0, y: 0.0, width: self.scrollView.frame.width, height: self.scrollView.frame.height)
         resultView = TWCityMapView(frame: resultFrame)
-        resultView.backgroundColor = UIColor.clear
         resultView.model = model.createResultMViewModel()
         self.scrollView.addSubview(resultView)
+        scrollView.addConstraint(NSLayoutConstraint(item: resultView, attribute: .bottom, relatedBy: .equal, toItem: scrollView, attribute: .bottom, multiplier: 1.0, constant: 0))
+        scrollView.addConstraint(NSLayoutConstraint(item: resultView, attribute: .left, relatedBy: .equal, toItem: scrollView, attribute: .left, multiplier: 1.0, constant: 0))
+        scrollView.addConstraint(NSLayoutConstraint(item: resultView, attribute: .right, relatedBy: .equal, toItem: scrollView, attribute: .right, multiplier: 1.0, constant: 0))
     }
 
     private func drawResult(_ result:TWPathResult) {

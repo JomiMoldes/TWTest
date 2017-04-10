@@ -15,8 +15,13 @@ class TWCityMapViewModel {
 
     let labelLeftMargin : CGFloat = 50.0
     let labelRightMargin : CGFloat = 10.0
+    let topMargin : CGFloat = 10.0
+    let bottomMargin : CGFloat = 10.0
     let circlePointsSize : CGFloat = 10.0
+    let separationBetweenLabels : CGFloat = 10.0
     let linePathWidth : CGFloat = 2.0
+
+    var totalHeight:CGFloat = 0
 
     var allYPositions = [CGFloat]()
 
@@ -69,7 +74,7 @@ class TWCityMapViewModel {
         var layers = [CATextLayer]()
         let descriptions = pathSteps()
 
-        var yPos:CGFloat = 0
+        var yPos:CGFloat = topMargin
         let alignmentMode = kCAAlignmentLeft
 
         allYPositions = [CGFloat]()
@@ -89,7 +94,7 @@ class TWCityMapViewModel {
 
             allYPositions.append(yPos + (totalHeight / 2))
 
-            yPos += totalHeight + 10
+            yPos += totalHeight + separationBetweenLabels
 
             label.frame = CGRect(origin: pos, size: CGSize(width: maxWidth, height: totalHeight))
 
@@ -99,6 +104,8 @@ class TWCityMapViewModel {
             label.alignmentMode = alignmentMode
             layers.append(label)
         }
+        self.totalHeight = yPos - separationBetweenLabels
+        print(self.totalHeight)
         return layers
     }
 

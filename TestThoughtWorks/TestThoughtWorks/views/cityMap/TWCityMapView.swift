@@ -28,6 +28,8 @@ class TWCityMapView : UIView {
                 layer.draw(frame: self.frame, model: model)
             }
         }
+        let size = CGSize(width: self.frame.width, height: model.totalHeight + model.bottomMargin)
+        self.frame = CGRect(origin:self.frame.origin, size: size)
     }
 
 
