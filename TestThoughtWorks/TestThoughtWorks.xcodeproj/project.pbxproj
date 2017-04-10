@@ -9,8 +9,10 @@
 /* Begin PBXBuildFile section */
 		45BAF000A4D0FB453DCC3358 /* TWLoadJSONOperationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFB603C514400D2FCBBB0 /* TWLoadJSONOperationTest.swift */; };
 		45BAF0B1B96A44D61A385913 /* TWPathCalculatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF043872766D6B02DE3B7 /* TWPathCalculatorTest.swift */; };
+		45BAF1DD64F5B550CF33BF71 /* TWInputStationViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFC731A92D58CE22D5A51 /* TWInputStationViewModelTest.swift */; };
 		45BAF2B31C1223DB5FF3430D /* TWStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFBBE702400459DD4DAAB /* TWStation.swift */; };
 		45BAF2DCD40F899657DEFFE1 /* TWLoadJSONOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF1D3DBD3CF1281D12E6B /* TWLoadJSONOperation.swift */; };
+		45BAF2DEA2D8CAE5F23F5517 /* TWInputStationViewModelFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF1CD311A9131B3F793BA /* TWInputStationViewModelFake.swift */; };
 		45BAF316513853D695D4CDBF /* TWStationsParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF3942594D246D87F2840 /* TWStationsParserTest.swift */; };
 		45BAF3478023F0BF6D972D9A /* TWGlobalModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF926746DE6FCC850929A /* TWGlobalModels.swift */; };
 		45BAF35C0B06C0A420AAE10D /* TWLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFF04D5C9DDDD87800824 /* TWLine.swift */; };
@@ -19,7 +21,6 @@
 		45BAF520C9364095BB8F4DA3 /* TWLinesAndStationsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFF0744FFA5FD28F34519 /* TWLinesAndStationsProvider.swift */; };
 		45BAF56C7E36FEA91FAB336E /* TWArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF7D72B9497CF3F275038 /* TWArrayExtensions.swift */; };
 		45BAF5D274D20135572738FD /* TWPathResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF7F9F967632B907659A6 /* TWPathResult.swift */; };
-		45BAF5FA85BECB67A4071FF2 /* TWInputStationViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFE6807B4E8311D9F697D /* TWInputStationViewModelTest.swift */; };
 		45BAF6377026F7658052B426 /* TWInitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFDC944E4F645EC2D8C60 /* TWInitialView.swift */; };
 		45BAF63BD819E9F4E90F705B /* TWInitialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFE348A86111C1BA28686 /* TWInitialViewModel.swift */; };
 		45BAF6741A6BE29CEB78D3B4 /* TWLaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF4E416B3271C7BA74EC6 /* TWLaunchScreenViewController.swift */; };
@@ -71,6 +72,7 @@
 		45BAF08894121B4EB2297F3E /* TWLinesParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLinesParser.swift; sourceTree = "<group>"; };
 		45BAF16D01F5E163FE1A5C9B /* TWInitialViewControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWInitialViewControllerTest.swift; sourceTree = "<group>"; };
 		45BAF174AFA3D3A871883B5C /* TWFastestPathCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWFastestPathCalculator.swift; sourceTree = "<group>"; };
+		45BAF1CD311A9131B3F793BA /* TWInputStationViewModelFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWInputStationViewModelFake.swift; sourceTree = "<group>"; };
 		45BAF1D3DBD3CF1281D12E6B /* TWLoadJSONOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLoadJSONOperation.swift; sourceTree = "<group>"; };
 		45BAF202B192ABA70CDDB5E8 /* TWInputStationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWInputStationViewModel.swift; sourceTree = "<group>"; };
 		45BAF28E0FEDC151A236C6EA /* TWInputStationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TWInputStationView.xib; sourceTree = "<group>"; };
@@ -93,10 +95,10 @@
 		45BAFAF39F68352CBE16273C /* TWDesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWDesignableView.swift; sourceTree = "<group>"; };
 		45BAFB603C514400D2FCBBB0 /* TWLoadJSONOperationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLoadJSONOperationTest.swift; sourceTree = "<group>"; };
 		45BAFBBE702400459DD4DAAB /* TWStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWStation.swift; sourceTree = "<group>"; };
+		45BAFC731A92D58CE22D5A51 /* TWInputStationViewModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWInputStationViewModelTest.swift; sourceTree = "<group>"; };
 		45BAFD93A34EDC952B571383 /* TWInputStationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWInputStationView.swift; sourceTree = "<group>"; };
 		45BAFDC944E4F645EC2D8C60 /* TWInitialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWInitialView.swift; sourceTree = "<group>"; };
 		45BAFE348A86111C1BA28686 /* TWInitialViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWInitialViewModel.swift; sourceTree = "<group>"; };
-		45BAFE6807B4E8311D9F697D /* TWInputStationViewModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWInputStationViewModelTest.swift; sourceTree = "<group>"; };
 		45BAFF04D5C9DDDD87800824 /* TWLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLine.swift; sourceTree = "<group>"; };
 		45BAFF0744FFA5FD28F34519 /* TWLinesAndStationsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLinesAndStationsProvider.swift; sourceTree = "<group>"; };
 		45BAFF5FE64BC09FC3861342 /* TWInitialViewModelFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWInitialViewModelFake.swift; sourceTree = "<group>"; };
@@ -194,7 +196,7 @@
 				45BAF9B077C9D048D12E5C1A /* TWInitialViewTest.swift */,
 				45BAF87685D5C20A15F70A72 /* TWInitialViewModelTest.swift */,
 				45BAFF5FE64BC09FC3861342 /* TWInitialViewModelFake.swift */,
-				45BAFE6807B4E8311D9F697D /* TWInputStationViewModelTest.swift */,
+				45BAF815D2CDA0D19394D79E /* inputs */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -243,6 +245,15 @@
 				45BAF54256E8B0A47334DA2B /* TWJSONLoader.swift */,
 			);
 			path = loaders;
+			sourceTree = "<group>";
+		};
+		45BAF815D2CDA0D19394D79E /* inputs */ = {
+			isa = PBXGroup;
+			children = (
+				45BAFC731A92D58CE22D5A51 /* TWInputStationViewModelTest.swift */,
+				45BAF1CD311A9131B3F793BA /* TWInputStationViewModelFake.swift */,
+			);
+			path = inputs;
 			sourceTree = "<group>";
 		};
 		45BAF8429920DA2B9866E6F3 /* parsers */ = {
@@ -601,8 +612,9 @@
 				45BAF000A4D0FB453DCC3358 /* TWLoadJSONOperationTest.swift in Sources */,
 				45BAF948AC926489625A8C0D /* TWLoadJSONOperationFake.swift in Sources */,
 				45BAF9F2CDDCA12DD5C2BF37 /* TWInitialViewModelFake.swift in Sources */,
-				45BAF5FA85BECB67A4071FF2 /* TWInputStationViewModelTest.swift in Sources */,
 				45BAFDF06A7898E34EBAA7EE /* TWLinesAndStationsProviderFake.swift in Sources */,
+				45BAF1DD64F5B550CF33BF71 /* TWInputStationViewModelTest.swift in Sources */,
+				45BAF2DEA2D8CAE5F23F5517 /* TWInputStationViewModelFake.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

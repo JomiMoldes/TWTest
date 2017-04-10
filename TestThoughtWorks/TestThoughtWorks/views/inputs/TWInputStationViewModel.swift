@@ -11,9 +11,19 @@ class TWInputStationViewModel {
 
     let provider : TWLinesAndStationsProvider
 
+    let updateTableSubject = PublishSubject<[TWStation]>()
+
     init(provider:TWLinesAndStationsProvider) {
         self.provider = provider
     }
+
+    func textHasChanged(str:String) {
+        self.provider.stationByWord(str, completion: {
+            stations in
+            self.updateTableSubject.onNext(stations)
+        })
+    }
+    
 
 
 
