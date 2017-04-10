@@ -28,6 +28,7 @@
 		45BAF7EAF781CAA216FEF453 /* TWDesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFAF39F68352CBE16273C /* TWDesignableView.swift */; };
 		45BAF7ED68B333AE1089CC34 /* TWInitialViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF9B077C9D048D12E5C1A /* TWInitialViewTest.swift */; };
 		45BAF948AC926489625A8C0D /* TWLoadJSONOperationFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF306EDEB7D5549A286B0 /* TWLoadJSONOperationFake.swift */; };
+		45BAF9F2CDDCA12DD5C2BF37 /* TWInitialViewModelFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFF5FE64BC09FC3861342 /* TWInitialViewModelFake.swift */; };
 		45BAFABEABD38959323B6305 /* TWJSONLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF54256E8B0A47334DA2B /* TWJSONLoader.swift */; };
 		45BAFADD8C27A76D86C3B617 /* TWLinesParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF08894121B4EB2297F3E /* TWLinesParser.swift */; };
 		45BAFB64D937BB8C9B13E195 /* TWFileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF67B32042B60C92674D3 /* TWFileLoader.swift */; };
@@ -92,6 +93,7 @@
 		45BAFE348A86111C1BA28686 /* TWInitialViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWInitialViewModel.swift; sourceTree = "<group>"; };
 		45BAFF04D5C9DDDD87800824 /* TWLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLine.swift; sourceTree = "<group>"; };
 		45BAFF0744FFA5FD28F34519 /* TWLinesAndStationsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLinesAndStationsProvider.swift; sourceTree = "<group>"; };
+		45BAFF5FE64BC09FC3861342 /* TWInitialViewModelFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWInitialViewModelFake.swift; sourceTree = "<group>"; };
 		45BAFF7AF24423BC2098D962 /* TWLayoutExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLayoutExtensions.swift; sourceTree = "<group>"; };
 		45BAFF94798FEB6B9910D942 /* TWTestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWTestHelper.swift; sourceTree = "<group>"; };
 		4677A0B84D44F8BA6A2BF88C /* Pods-TestThoughtWorksTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestThoughtWorksTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestThoughtWorksTests/Pods-TestThoughtWorksTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			children = (
 				45BAF9B077C9D048D12E5C1A /* TWInitialViewTest.swift */,
 				45BAF87685D5C20A15F70A72 /* TWInitialViewModelTest.swift */,
+				45BAFF5FE64BC09FC3861342 /* TWInitialViewModelFake.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -587,6 +590,7 @@
 				45BAFDADDBF5D77389A48E0B /* TWInitialViewModelTest.swift in Sources */,
 				45BAF000A4D0FB453DCC3358 /* TWLoadJSONOperationTest.swift in Sources */,
 				45BAF948AC926489625A8C0D /* TWLoadJSONOperationFake.swift in Sources */,
+				45BAF9F2CDDCA12DD5C2BF37 /* TWInitialViewModelFake.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

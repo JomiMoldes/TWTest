@@ -5,6 +5,8 @@
 
 import Foundation
 import UIKit
+import RxSwift
+import RxCocoa
 import XCTest
 
 @testable import TestThoughtWorks
@@ -12,20 +14,38 @@ import XCTest
 class TWInitialViewTest : XCTestCase  {
 
     var view : TWInitialView!
-    var model : TWInitialViewModel!
+
+    override func setUp() {
+        super.setUp()
+        view = Bundle.main.loadNibNamed("TWInitialView", owner: self)?[0] as! TWInitialView
+        view.model = TWInitialViewModelFake()
+    }
+
 
     func testView() {
-        view = makeSUT()
-        view.model = TWInitialViewModel()
+
         XCTAssertNotNil(view.model)
         
+    }
+
+    func testNewConstraints() {
+        let asyncExpectation = expectation(description: "keyboard will show")
+        (view.model as! TWInitialViewModelFake).keyboardExpectation = asyncExpectation
+        NotificationCenter.default.post(name: .UIKeyboardWillShow , object:nil, userInfo: [UIKeyboardFrameBeginUserInfoKey:CGRect(x: 1, y: 1, width: 1, height: 1)])
+
+        waitForExpectations(timeout: 1) {
+            error in
+            if error != nil {
+                XCTFail()
+            }
+
+            XCTAssertTrue(true)
+            XCTAssertEqual(floor(self.view.model.buttonYMultiplier * 10),floor(self.view.buttonYConstraint.multiplier * 10))
+        }
     }
 
 
 // helpers
 
-    private func makeSUT() -> TWInitialView {
-        return Bundle.main.loadNibNamed("TWInitialView", owner: self)?[0] as! TWInitialView
-    }
 
 }

@@ -5,6 +5,8 @@
 
 import Foundation
 import UIKit
+import RxSwift
+import RxCocoa
 
 class TWInitialView : UIView {
     @IBOutlet weak var searchButton: UIButton!
@@ -16,6 +18,8 @@ class TWInitialView : UIView {
     @IBOutlet weak var toStationYConstraint: NSLayoutConstraint!
     @IBOutlet weak var fromStationYConstraint: NSLayoutConstraint!
 
+    let disposable = DisposeBag()
+
     var model : TWInitialViewModel! {
         didSet {
             self.bind()
@@ -24,40 +28,35 @@ class TWInitialView : UIView {
     }
 
     private func bind() {
-
+        model.updateConstraintsSubject.asObservable()
+                .subscribe(onNext:{ [unowned self] _ in
+                    self.moveFieldsToTop()
+                })
+                .addDisposableTo(disposable)
     }
 
     private func setup() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
+
         
     }
 
-    func keyboardWillShow(_ notification:Notification) {
-        if (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue != nil {
-//            let keyboardHeight = keyboardSize.height
+    private func moveFieldsToTop() {
+        let newToYConstraint = toStationYConstraint.constraintWithMultiplier(multiplier: model.toInputYMultiplier)
+        toStationYConstraint.isActive = false
+        self.addConstraint(newToYConstraint)
+        toStationYConstraint = newToYConstraint
 
-            let newToYConstraint = toStationYConstraint.constraintWithMultiplier(multiplier: model.toInputYMultiplier)
-            toStationYConstraint.isActive = false
-            self.addConstraint(newToYConstraint)
-            toStationYConstraint = newToYConstraint
+        let newFromYConstraint = fromStationYConstraint.constraintWithMultiplier(multiplier: model.fromInputYMultiplier)
+        fromStationYConstraint.isActive = false
+        self.addConstraint(newFromYConstraint)
+        fromStationYConstraint = newFromYConstraint
 
-            let newFromYConstraint = fromStationYConstraint.constraintWithMultiplier(multiplier: model.fromInputYMultiplier)
-            fromStationYConstraint.isActive = false
-            self.addConstraint(newFromYConstraint)
-            fromStationYConstraint = newFromYConstraint
+        let newButtonYConstraint = buttonYConstraint.constraintWithMultiplier(multiplier: model.buttonYMultiplier)
+        buttonYConstraint.isActive = false
+        self.addConstraint(newButtonYConstraint)
+        buttonYConstraint = newButtonYConstraint
 
-            let newButtonYConstraint = buttonYConstraint.constraintWithMultiplier(multiplier: model.buttonYMultiplier)
-            buttonYConstraint.isActive = false
-            self.addConstraint(newButtonYConstraint)
-            buttonYConstraint = newButtonYConstraint
-            
-            
-            self.layoutIfNeeded()
-        }
+        self.layoutIfNeeded()
     }
-
-
-
-
 
 }
