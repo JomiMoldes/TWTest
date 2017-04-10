@@ -105,7 +105,6 @@ class TWCityMapViewModel {
             layers.append(label)
         }
         self.totalHeight = yPos - separationBetweenLabels
-        print(self.totalHeight)
         return layers
     }
 

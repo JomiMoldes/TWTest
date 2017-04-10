@@ -24,15 +24,21 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UY7-xF-W3A">
-                    <rect key="frame" x="147" y="387" width="120" height="35"/>
+                    <rect key="frame" x="147" y="390.33333333333331" width="120" height="30"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="35" id="mVE-EC-Mqv"/>
+                        <constraint firstAttribute="height" constant="30" id="mVE-EC-Mqv"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                     <state key="normal" title="search">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.makesToBound" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="searchTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="7G9-1V-obj"/>
                     </connections>
@@ -52,7 +58,7 @@
                     </constraints>
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fXJ-AT-g0i" userLabel="scrollView">
-                    <rect key="frame" x="87" y="444" width="240" height="272"/>
+                    <rect key="frame" x="87" y="442.33333333333326" width="240" height="273.66666666666674"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="240" id="wfO-Yg-B37"/>
