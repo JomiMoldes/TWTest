@@ -40,6 +40,11 @@ class TWInitialViewModel {
         return true
     }
 
+    func createResultMViewModel() -> TWCityMapViewModel {
+        let model = TWCityMapViewModel(provider:TWGlobalModels.sharedInstance.stationsProvider)
+        return model
+    }
+
     private func addObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
     }

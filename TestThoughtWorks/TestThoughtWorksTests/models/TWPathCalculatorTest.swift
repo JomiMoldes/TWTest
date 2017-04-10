@@ -35,7 +35,7 @@ class TWPathCalculatorTest : XCTestCase {
             let to = provider.stationById(id: check["to"] as! Int)
             let stations = check["stations"] as! [Int]
             let result = makeSUT(provider: provider).calculate(from!, to!)
-            XCTAssertEqual(result.stations.map{$0.id}, stations)
+            XCTAssertEqual(result.stations.map{$0.station.id}, stations)
         }
     }
 
@@ -49,7 +49,7 @@ class TWPathCalculatorTest : XCTestCase {
             let price = (check["price"] as! Int) * priceUnit
             let stations = check["stations"] as! [Int]
             XCTAssertEqual(result.time, (stations.count - 1) * 5)
-            XCTAssertEqual(result.stations.map{$0.id}, stations)
+            XCTAssertEqual(result.stations.map{$0.station.id}, stations)
             XCTAssertEqual(result.price, price)
         }
     }
@@ -64,7 +64,7 @@ class TWPathCalculatorTest : XCTestCase {
             let stations = check["stations"] as! [Int]
             let result = makeSUT(provider: provider).calculate(from!, to!)
             XCTAssertEqual(result.time, (stations.count - 1) * 5)
-            XCTAssertEqual(result.stations.map{$0.id}, stations)
+            XCTAssertEqual(result.stations.map{$0.station.id}, stations)
             XCTAssertEqual(result.price, price)
         }
     }

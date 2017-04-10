@@ -17,8 +17,11 @@ class TWInitialView : UIView {
     @IBOutlet weak var buttonYConstraint: NSLayoutConstraint!
     @IBOutlet weak var toStationYConstraint: NSLayoutConstraint!
     @IBOutlet weak var fromStationYConstraint: NSLayoutConstraint!
+    @IBOutlet weak var scrollView: UIScrollView!
 
     let disposable = DisposeBag()
+
+    var resultView : TWCityMapView!
 
     var model : TWInitialViewModel! {
         didSet {
@@ -36,7 +39,7 @@ class TWInitialView : UIView {
 
         model.pathFoundSubject.asObservable()
                 .subscribe(onNext:{ [unowned self] (result:TWPathResult) in
-                    print(result.time)
+                    self.drawResult(result)
                 })
                 .addDisposableTo(disposable)
 
@@ -45,6 +48,21 @@ class TWInitialView : UIView {
     private func setup() {
         fromView.model = model.fromInputModel
         toView.model = model.toInputModel
+        setupResultView()
+    }
+
+    private func setupResultView() {
+        let resultFrame = CGRect(x: 0.0, y: 0.0, width: self.scrollView.frame.width, height: self.scrollView.frame.height)
+        resultView = TWCityMapView(frame: resultFrame)
+        resultView.backgroundColor = UIColor.clear
+        resultView.model = model.createResultMViewModel()
+        self.scrollView.addSubview(resultView)
+    }
+
+    private func drawResult(_ result:TWPathResult) {
+        DispatchQueue.main.async{
+            self.resultView.model.result = result
+        }
     }
 
     private func moveFieldsToTop() {

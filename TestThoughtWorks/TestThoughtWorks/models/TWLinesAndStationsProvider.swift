@@ -80,6 +80,20 @@ class TWLinesAndStationsProvider {
         }
     }
 
+    func destinationName(_ from:TWStation,_ to:TWStation) -> String {
+        if let sharedLine = sharedLine(from, to) {
+            let order = sharedLine.stationsOrder
+            if let fromIndex = order.index(of:from.id),
+                let toIndex = order.index(of:to.id) {
+                if fromIndex < toIndex {
+                    return stationById(id: order[order.count - 1])!.name
+                }
+                return stationById(id: order[0])!.name
+            }
+        }
+        return ""
+    }
+
 // Private
 
     private func parseByIds() {

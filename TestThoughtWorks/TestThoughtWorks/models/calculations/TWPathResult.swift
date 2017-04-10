@@ -9,9 +9,9 @@ struct TWPathResult {
 
     let time : Int
     let price : Int
-    let stations : [TWStation]
+    let stations : [TWStationPath]
 
-    init(time:Int, price:Int, stations:[TWStation]) {
+    init(time:Int, price:Int, stations:[TWStationPath]) {
         self.time = time
         self.price = price
         self.stations = stations

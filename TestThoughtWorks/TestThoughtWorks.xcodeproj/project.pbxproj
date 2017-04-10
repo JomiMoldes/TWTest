@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		45BAF000A4D0FB453DCC3358 /* TWLoadJSONOperationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFB603C514400D2FCBBB0 /* TWLoadJSONOperationTest.swift */; };
 		45BAF0B1B96A44D61A385913 /* TWPathCalculatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF043872766D6B02DE3B7 /* TWPathCalculatorTest.swift */; };
+		45BAF11C5D31D0563BBA6837 /* TWCityMapViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFA8C95578E271706141F /* TWCityMapViewModelTest.swift */; };
 		45BAF1DD64F5B550CF33BF71 /* TWInputStationViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFC731A92D58CE22D5A51 /* TWInputStationViewModelTest.swift */; };
+		45BAF282657E06957430F2F1 /* TWStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF8C3043E68D6F3D6ACA2 /* TWStringExtensions.swift */; };
 		45BAF2B31C1223DB5FF3430D /* TWStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFBBE702400459DD4DAAB /* TWStation.swift */; };
 		45BAF2B44AEDCDA6F88DD2D3 /* TWStationNameViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFDB83405090206FE96A0 /* TWStationNameViewCell.swift */; };
 		45BAF2DCD40F899657DEFFE1 /* TWLoadJSONOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF1D3DBD3CF1281D12E6B /* TWLoadJSONOperation.swift */; };
@@ -21,7 +23,10 @@
 		45BAF4AA90338D956A548EF2 /* stations_test.json in Resources */ = {isa = PBXBuildFile; fileRef = 4890519F1E9812B50013AD68 /* stations_test.json */; };
 		45BAF520C9364095BB8F4DA3 /* TWLinesAndStationsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFF0744FFA5FD28F34519 /* TWLinesAndStationsProvider.swift */; };
 		45BAF56C7E36FEA91FAB336E /* TWArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF7D72B9497CF3F275038 /* TWArrayExtensions.swift */; };
+		45BAF57EB65568BA5855D364 /* TWStationPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF64A720A87AD78FA985E /* TWStationPath.swift */; };
+		45BAF5807BD40993ADBB2110 /* TWMetroLineLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF108AFC39108B476C202 /* TWMetroLineLayer.swift */; };
 		45BAF5D274D20135572738FD /* TWPathResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF7F9F967632B907659A6 /* TWPathResult.swift */; };
+		45BAF5E572FB1695B93C679C /* TWMetroLayerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFEC1F42A1BA85C2AD9E4 /* TWMetroLayerProtocol.swift */; };
 		45BAF5EF87DD2529C389E55A /* TWInputStationViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFF6AAEEA677FEC492CEC /* TWInputStationViewTest.swift */; };
 		45BAF6377026F7658052B426 /* TWInitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFDC944E4F645EC2D8C60 /* TWInitialView.swift */; };
 		45BAF63BD819E9F4E90F705B /* TWInitialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFE348A86111C1BA28686 /* TWInitialViewModel.swift */; };
@@ -29,16 +34,21 @@
 		45BAF750840ED9E30FE668A6 /* TWInputStationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45BAF28E0FEDC151A236C6EA /* TWInputStationView.xib */; };
 		45BAF78C90728B414B011796 /* TWFastestPathCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF174AFA3D3A871883B5C /* TWFastestPathCalculator.swift */; };
 		45BAF7DD52CAC1596FDF85BE /* TWLayoutExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFF7AF24423BC2098D962 /* TWLayoutExtensions.swift */; };
+		45BAF7E0B39680599B09E295 /* TWMetroLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF87AFA704213E7E44FB9 /* TWMetroLayer.swift */; };
 		45BAF7EAF781CAA216FEF453 /* TWDesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFAF39F68352CBE16273C /* TWDesignableView.swift */; };
 		45BAF7ED68B333AE1089CC34 /* TWInitialViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF9B077C9D048D12E5C1A /* TWInitialViewTest.swift */; };
 		45BAF948AC926489625A8C0D /* TWLoadJSONOperationFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF306EDEB7D5549A286B0 /* TWLoadJSONOperationFake.swift */; };
 		45BAF9F2CDDCA12DD5C2BF37 /* TWInitialViewModelFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFF5FE64BC09FC3861342 /* TWInitialViewModelFake.swift */; };
+		45BAFA4A903B20E104295933 /* TWCityMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFD02E3E4EDE69DC49FFA /* TWCityMapViewModel.swift */; };
 		45BAFABEABD38959323B6305 /* TWJSONLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF54256E8B0A47334DA2B /* TWJSONLoader.swift */; };
 		45BAFADD8C27A76D86C3B617 /* TWLinesParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF08894121B4EB2297F3E /* TWLinesParser.swift */; };
 		45BAFB14CAC5A0491F39D23A /* TWNonTouchableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF06E39CD1AA49A075787 /* TWNonTouchableView.swift */; };
 		45BAFB64D937BB8C9B13E195 /* TWFileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF67B32042B60C92674D3 /* TWFileLoader.swift */; };
 		45BAFB6DB7427492D8F997A9 /* TWInputStationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFD93A34EDC952B571383 /* TWInputStationView.swift */; };
 		45BAFBBCCB203A196B38A552 /* TWInitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF88119E0523574596B98 /* TWInitialViewController.swift */; };
+		45BAFBF6AE3FB166EB10963C /* UIBezierExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF218C39379339CF9F9F1 /* UIBezierExtension.swift */; };
+		45BAFC9AAA91CF300B380D31 /* TWCityMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF8F3BDF36356D0EE4739 /* TWCityMapView.swift */; };
+		45BAFCA5B48B6E81CB1621B6 /* TWMetroDirectionsLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF2EACE8D3355D0995618 /* TWMetroDirectionsLayer.swift */; };
 		45BAFD3B647095EA4CB54AFD /* TWInitialView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 489051A11E9A93A90013AD68 /* TWInitialView.xib */; };
 		45BAFD3FE47D9E888D301F0F /* TWStationsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF39A24DDE9FCDB634EE2 /* TWStationsParser.swift */; };
 		45BAFDADDBF5D77389A48E0B /* TWInitialViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF87685D5C20A15F70A72 /* TWInitialViewModelTest.swift */; };
@@ -75,36 +85,46 @@
 		45BAF043872766D6B02DE3B7 /* TWPathCalculatorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWPathCalculatorTest.swift; sourceTree = "<group>"; };
 		45BAF06E39CD1AA49A075787 /* TWNonTouchableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWNonTouchableView.swift; sourceTree = "<group>"; };
 		45BAF08894121B4EB2297F3E /* TWLinesParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLinesParser.swift; sourceTree = "<group>"; };
+		45BAF108AFC39108B476C202 /* TWMetroLineLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWMetroLineLayer.swift; sourceTree = "<group>"; };
 		45BAF16D01F5E163FE1A5C9B /* TWInitialViewControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWInitialViewControllerTest.swift; sourceTree = "<group>"; };
 		45BAF174AFA3D3A871883B5C /* TWFastestPathCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWFastestPathCalculator.swift; sourceTree = "<group>"; };
 		45BAF1CD311A9131B3F793BA /* TWInputStationViewModelFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWInputStationViewModelFake.swift; sourceTree = "<group>"; };
 		45BAF1D3DBD3CF1281D12E6B /* TWLoadJSONOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLoadJSONOperation.swift; sourceTree = "<group>"; };
 		45BAF202B192ABA70CDDB5E8 /* TWInputStationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWInputStationViewModel.swift; sourceTree = "<group>"; };
+		45BAF218C39379339CF9F9F1 /* UIBezierExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBezierExtension.swift; sourceTree = "<group>"; };
 		45BAF28E0FEDC151A236C6EA /* TWInputStationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TWInputStationView.xib; sourceTree = "<group>"; };
+		45BAF2EACE8D3355D0995618 /* TWMetroDirectionsLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWMetroDirectionsLayer.swift; sourceTree = "<group>"; };
 		45BAF306EDEB7D5549A286B0 /* TWLoadJSONOperationFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLoadJSONOperationFake.swift; sourceTree = "<group>"; };
 		45BAF3942594D246D87F2840 /* TWStationsParserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWStationsParserTest.swift; sourceTree = "<group>"; };
 		45BAF39A24DDE9FCDB634EE2 /* TWStationsParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWStationsParser.swift; sourceTree = "<group>"; };
 		45BAF4E416B3271C7BA74EC6 /* TWLaunchScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLaunchScreenViewController.swift; sourceTree = "<group>"; };
 		45BAF54256E8B0A47334DA2B /* TWJSONLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWJSONLoader.swift; sourceTree = "<group>"; };
+		45BAF64A720A87AD78FA985E /* TWStationPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWStationPath.swift; sourceTree = "<group>"; };
 		45BAF67B32042B60C92674D3 /* TWFileLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWFileLoader.swift; sourceTree = "<group>"; };
 		45BAF7D72B9497CF3F275038 /* TWArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWArrayExtensions.swift; sourceTree = "<group>"; };
 		45BAF7F9F967632B907659A6 /* TWPathResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWPathResult.swift; sourceTree = "<group>"; };
 		45BAF87685D5C20A15F70A72 /* TWInitialViewModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWInitialViewModelTest.swift; sourceTree = "<group>"; };
+		45BAF87AFA704213E7E44FB9 /* TWMetroLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWMetroLayer.swift; sourceTree = "<group>"; };
 		45BAF88119E0523574596B98 /* TWInitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWInitialViewController.swift; sourceTree = "<group>"; };
 		45BAF8AC0D64270F03AFC42A /* TWLinesAndStationsProviderFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLinesAndStationsProviderFake.swift; sourceTree = "<group>"; };
+		45BAF8C3043E68D6F3D6ACA2 /* TWStringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWStringExtensions.swift; sourceTree = "<group>"; };
+		45BAF8F3BDF36356D0EE4739 /* TWCityMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWCityMapView.swift; sourceTree = "<group>"; };
 		45BAF926746DE6FCC850929A /* TWGlobalModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWGlobalModels.swift; sourceTree = "<group>"; };
 		45BAF936CC6D0B6CC96A61B3 /* TWPathCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWPathCalculator.swift; sourceTree = "<group>"; };
 		45BAF976F494FF3DC5280B8C /* TWLinesParserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLinesParserTest.swift; sourceTree = "<group>"; };
 		45BAF9B077C9D048D12E5C1A /* TWInitialViewTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWInitialViewTest.swift; sourceTree = "<group>"; };
 		45BAF9FE998AC002AB295B47 /* TWLinesAndStationsProviderTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLinesAndStationsProviderTest.swift; sourceTree = "<group>"; };
+		45BAFA8C95578E271706141F /* TWCityMapViewModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWCityMapViewModelTest.swift; sourceTree = "<group>"; };
 		45BAFAF39F68352CBE16273C /* TWDesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWDesignableView.swift; sourceTree = "<group>"; };
 		45BAFB603C514400D2FCBBB0 /* TWLoadJSONOperationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLoadJSONOperationTest.swift; sourceTree = "<group>"; };
 		45BAFBBE702400459DD4DAAB /* TWStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWStation.swift; sourceTree = "<group>"; };
 		45BAFC731A92D58CE22D5A51 /* TWInputStationViewModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWInputStationViewModelTest.swift; sourceTree = "<group>"; };
+		45BAFD02E3E4EDE69DC49FFA /* TWCityMapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWCityMapViewModel.swift; sourceTree = "<group>"; };
 		45BAFD93A34EDC952B571383 /* TWInputStationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWInputStationView.swift; sourceTree = "<group>"; };
 		45BAFDB83405090206FE96A0 /* TWStationNameViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWStationNameViewCell.swift; sourceTree = "<group>"; };
 		45BAFDC944E4F645EC2D8C60 /* TWInitialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWInitialView.swift; sourceTree = "<group>"; };
 		45BAFE348A86111C1BA28686 /* TWInitialViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWInitialViewModel.swift; sourceTree = "<group>"; };
+		45BAFEC1F42A1BA85C2AD9E4 /* TWMetroLayerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWMetroLayerProtocol.swift; sourceTree = "<group>"; };
 		45BAFF04D5C9DDDD87800824 /* TWLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLine.swift; sourceTree = "<group>"; };
 		45BAFF0744FFA5FD28F34519 /* TWLinesAndStationsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLinesAndStationsProvider.swift; sourceTree = "<group>"; };
 		45BAFF5FE64BC09FC3861342 /* TWInitialViewModelFake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWInitialViewModelFake.swift; sourceTree = "<group>"; };
@@ -180,11 +200,24 @@
 			path = parsers;
 			sourceTree = "<group>";
 		};
+		45BAF0D5540FE5D7777B8DA5 /* layers */ = {
+			isa = PBXGroup;
+			children = (
+				45BAFEC1F42A1BA85C2AD9E4 /* TWMetroLayerProtocol.swift */,
+				45BAF108AFC39108B476C202 /* TWMetroLineLayer.swift */,
+				45BAF2EACE8D3355D0995618 /* TWMetroDirectionsLayer.swift */,
+				45BAF87AFA704213E7E44FB9 /* TWMetroLayer.swift */,
+			);
+			path = layers;
+			sourceTree = "<group>";
+		};
 		45BAF11653CB86CB23350EEA /* extensions */ = {
 			isa = PBXGroup;
 			children = (
 				45BAF7D72B9497CF3F275038 /* TWArrayExtensions.swift */,
 				45BAFF7AF24423BC2098D962 /* TWLayoutExtensions.swift */,
+				45BAF8C3043E68D6F3D6ACA2 /* TWStringExtensions.swift */,
+				45BAF218C39379339CF9F9F1 /* UIBezierExtension.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -200,6 +233,16 @@
 			path = models;
 			sourceTree = "<group>";
 		};
+		45BAF1F1547D21A787DCD926 /* cityMap */ = {
+			isa = PBXGroup;
+			children = (
+				45BAF8F3BDF36356D0EE4739 /* TWCityMapView.swift */,
+				45BAFD02E3E4EDE69DC49FFA /* TWCityMapViewModel.swift */,
+				45BAF0D5540FE5D7777B8DA5 /* layers */,
+			);
+			path = cityMap;
+			sourceTree = "<group>";
+		};
 		45BAF2C3960B57126F0F5407 /* views */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +250,7 @@
 				45BAF87685D5C20A15F70A72 /* TWInitialViewModelTest.swift */,
 				45BAFF5FE64BC09FC3861342 /* TWInitialViewModelFake.swift */,
 				45BAF815D2CDA0D19394D79E /* inputs */,
+				45BAFB63D000A0B7BEB66ED7 /* cityMap */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -221,6 +265,7 @@
 				45BAF028262952B2AA3EDF5C /* inputs */,
 				45BAFAF39F68352CBE16273C /* TWDesignableView.swift */,
 				45BAF06E39CD1AA49A075787 /* TWNonTouchableView.swift */,
+				45BAF1F1547D21A787DCD926 /* cityMap */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -236,6 +281,7 @@
 				45BAFF28BFC6BD777B49AC8D /* calculations */,
 				45BAF926746DE6FCC850929A /* TWGlobalModels.swift */,
 				45BAF8628877A9C3E4883267 /* operations */,
+				45BAF64A720A87AD78FA985E /* TWStationPath.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -291,6 +337,14 @@
 				45BAF16D01F5E163FE1A5C9B /* TWInitialViewControllerTest.swift */,
 			);
 			path = controllers;
+			sourceTree = "<group>";
+		};
+		45BAFB63D000A0B7BEB66ED7 /* cityMap */ = {
+			isa = PBXGroup;
+			children = (
+				45BAFA8C95578E271706141F /* TWCityMapViewModelTest.swift */,
+			);
+			path = cityMap;
 			sourceTree = "<group>";
 		};
 		45BAFF28BFC6BD777B49AC8D /* calculations */ = {
@@ -609,6 +663,15 @@
 				45BAFF231DCD7F42C74D5983 /* TWInputStationViewModel.swift in Sources */,
 				45BAF2B44AEDCDA6F88DD2D3 /* TWStationNameViewCell.swift in Sources */,
 				45BAFB14CAC5A0491F39D23A /* TWNonTouchableView.swift in Sources */,
+				45BAFC9AAA91CF300B380D31 /* TWCityMapView.swift in Sources */,
+				45BAFA4A903B20E104295933 /* TWCityMapViewModel.swift in Sources */,
+				45BAF5E572FB1695B93C679C /* TWMetroLayerProtocol.swift in Sources */,
+				45BAF5807BD40993ADBB2110 /* TWMetroLineLayer.swift in Sources */,
+				45BAFCA5B48B6E81CB1621B6 /* TWMetroDirectionsLayer.swift in Sources */,
+				45BAF7E0B39680599B09E295 /* TWMetroLayer.swift in Sources */,
+				45BAF57EB65568BA5855D364 /* TWStationPath.swift in Sources */,
+				45BAF282657E06957430F2F1 /* TWStringExtensions.swift in Sources */,
+				45BAFBF6AE3FB166EB10963C /* UIBezierExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -631,6 +694,7 @@
 				45BAF1DD64F5B550CF33BF71 /* TWInputStationViewModelTest.swift in Sources */,
 				45BAF2DEA2D8CAE5F23F5517 /* TWInputStationViewModelFake.swift in Sources */,
 				45BAF5EF87DD2529C389E55A /* TWInputStationViewTest.swift in Sources */,
+				45BAF11C5D31D0563BBA6837 /* TWCityMapViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

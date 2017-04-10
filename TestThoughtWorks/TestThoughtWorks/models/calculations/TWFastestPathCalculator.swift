@@ -31,8 +31,8 @@ class TWFastestPathCalculator : TWPathCalculator {
 
         let stationsIds = [from.id] + stationsIdsInBetweenSameLine(from: from, to: to, line: line)
         let stations = stationsIds.map{ provider.stationById(id: $0) }.flatMap { $0 }
-
-        return TWPathResult(time: (stationsIds.count - 1) * 5, price: (stationsIds.count - 1) * 1, stations:stations)
+        let pathStations = parsePath(stations: stations)
+        return TWPathResult(time: (stationsIds.count - 1) * 5, price: (stationsIds.count - 1) * 1, stations:pathStations)
     }
 
     private func stationsIdsInBetweenSameLine(from:TWStation, to:TWStation, line:TWLine) -> [Int] {
@@ -60,6 +60,7 @@ class TWFastestPathCalculator : TWPathCalculator {
         var combinations = 0
         var stationsAmount = 0
         var stationsIds = [Int]()
+
         var lastConnection:NextStation?
         for station in fromConnections {
             var q = station.distance
@@ -104,8 +105,34 @@ class TWFastestPathCalculator : TWPathCalculator {
             stationsIds = stationsIds + idsToFinalStation
         }
         let stations = stationsIds.map{ provider.stationById(id: $0) }.flatMap { $0 }
+        let pathStations = parsePath(stations: stations)
+        return TWPathResult(time: (stationsIds.count - 1) * 5, price: (stationsIds.count - 1 + combinations)  * 1, stations: pathStations)
+    }
 
-        return TWPathResult(time: (stationsIds.count - 1) * 5, price: (stationsIds.count - 1 + combinations)  * 1, stations: stations)
+    private func parsePath(stations:[TWStation]) -> [TWStationPath] {
+        var pathStations = [TWStationPath]()
+        for i in 0..<stations.count {
+            let station:TWStation = stations[i]
+            var sharedLine : TWLine!
+            var nextStation : TWStation?
+            if i < stations.count - 1{
+                nextStation = stations[i + 1]
+                sharedLine = provider.sharedLine(station, nextStation!)
+            } else if i > 0 {
+                let previousStation = stations[i - 1]
+                sharedLine = provider.sharedLine(station, previousStation)
+            } else {
+                sharedLine = provider.lineBy(id: station.lines.first!)
+            }
+
+            var pathStation = TWStationPath(station: station, line: sharedLine)
+            if let nextStation = nextStation {
+                pathStation.nextStation = nextStation
+            }
+            pathStations.append(pathStation)
+        }
+        return pathStations
+
     }
 
     private func orderByMatches(_ fromConnections:[NextStation],_ toConnections:[NextStation]) -> [NextStation] {
