@@ -821,6 +821,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 84720BD495F81D63D45A9DEA /* Pods-TestThoughtWorks.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2G24Q5X34D;
 				INFOPLIST_FILE = TestThoughtWorks/Info.plist;
@@ -835,6 +836,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F86679E6277A47DC81258E92 /* Pods-TestThoughtWorks.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2G24Q5X34D;
 				INFOPLIST_FILE = TestThoughtWorks/Info.plist;
