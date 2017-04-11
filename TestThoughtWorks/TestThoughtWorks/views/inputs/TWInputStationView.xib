@@ -29,16 +29,19 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1cC-uY-4LR">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1cC-uY-4LR">
                     <rect key="frame" x="0.0" y="29" width="300" height="271"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="1cC-uY-4LR" secondAttribute="bottom" id="C3d-bX-nfs"/>
+                <constraint firstItem="1cC-uY-4LR" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Eif-wA-KyQ"/>
                 <constraint firstItem="ygB-ku-plx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="MPp-80-gw9"/>
                 <constraint firstItem="ygB-ku-plx" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="Tpr-lZ-nib"/>
+                <constraint firstItem="1cC-uY-4LR" firstAttribute="top" secondItem="ygB-ku-plx" secondAttribute="bottom" constant="-1" id="cLY-yU-ovT"/>
+                <constraint firstItem="1cC-uY-4LR" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="cyE-0M-u5U"/>
                 <constraint firstItem="ygB-ku-plx" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ePn-mO-ewd"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
