@@ -21,11 +21,8 @@ class TWInitialViewTest : XCTestCase  {
         view.model = TWInitialViewModelFake(calculator: TWFastestPathCalculator(provider:TWLinesAndStationsProviderFake()))
     }
 
-
     func testView() {
-
         XCTAssertNotNil(view.model)
-        
     }
 
     func testNewConstraints() {
@@ -43,9 +40,6 @@ class TWInitialViewTest : XCTestCase  {
             XCTAssertEqual(floor(self.view.model.buttonYMultiplier * 10),floor(self.view.buttonYConstraint.multiplier * 10))
         }
     }
-
-
-// helpers
 
 
 }

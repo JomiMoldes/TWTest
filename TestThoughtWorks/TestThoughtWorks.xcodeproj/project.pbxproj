@@ -38,6 +38,7 @@
 		45BAF7E0B39680599B09E295 /* TWMetroLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF87AFA704213E7E44FB9 /* TWMetroLayer.swift */; };
 		45BAF7EAF781CAA216FEF453 /* TWDesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFAF39F68352CBE16273C /* TWDesignableView.swift */; };
 		45BAF7ED68B333AE1089CC34 /* TWInitialViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF9B077C9D048D12E5C1A /* TWInitialViewTest.swift */; };
+		45BAF8BB0FC092ABA94EF851 /* TWOtherCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFBFE3696A43D9EE30BB1 /* TWOtherCalculator.swift */; };
 		45BAF948AC926489625A8C0D /* TWLoadJSONOperationFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF306EDEB7D5549A286B0 /* TWLoadJSONOperationFake.swift */; };
 		45BAF9F2CDDCA12DD5C2BF37 /* TWInitialViewModelFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFF5FE64BC09FC3861342 /* TWInitialViewModelFake.swift */; };
 		45BAFA4A903B20E104295933 /* TWCityMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFD02E3E4EDE69DC49FFA /* TWCityMapViewModel.swift */; };
@@ -55,6 +56,7 @@
 		45BAFDADDBF5D77389A48E0B /* TWInitialViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF87685D5C20A15F70A72 /* TWInitialViewModelTest.swift */; };
 		45BAFDF06A7898E34EBAA7EE /* TWLinesAndStationsProviderFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF8AC0D64270F03AFC42A /* TWLinesAndStationsProviderFake.swift */; };
 		45BAFE0C3C1AE9F9A7205E96 /* TWLinesParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF976F494FF3DC5280B8C /* TWLinesParserTest.swift */; };
+		45BAFE775C7ACCBF837294F6 /* TWOtherCalculatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAFF9E01F2B7B36C859536 /* TWOtherCalculatorTest.swift */; };
 		45BAFE88A3E32125E0BF9535 /* TWLinesAndStationsProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF9FE998AC002AB295B47 /* TWLinesAndStationsProviderTest.swift */; };
 		45BAFEBCFC7003EB42C33062 /* TWPathCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF936CC6D0B6CC96A61B3 /* TWPathCalculator.swift */; };
 		45BAFF108671E8E606958E8B /* TWInitialViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAF16D01F5E163FE1A5C9B /* TWInitialViewControllerTest.swift */; };
@@ -119,6 +121,7 @@
 		45BAFAF39F68352CBE16273C /* TWDesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWDesignableView.swift; sourceTree = "<group>"; };
 		45BAFB603C514400D2FCBBB0 /* TWLoadJSONOperationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLoadJSONOperationTest.swift; sourceTree = "<group>"; };
 		45BAFBBE702400459DD4DAAB /* TWStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWStation.swift; sourceTree = "<group>"; };
+		45BAFBFE3696A43D9EE30BB1 /* TWOtherCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWOtherCalculator.swift; sourceTree = "<group>"; };
 		45BAFC731A92D58CE22D5A51 /* TWInputStationViewModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWInputStationViewModelTest.swift; sourceTree = "<group>"; };
 		45BAFCEC362894ABB6EF2106 /* TWMetroTitleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWMetroTitleLayer.swift; sourceTree = "<group>"; };
 		45BAFD02E3E4EDE69DC49FFA /* TWCityMapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWCityMapViewModel.swift; sourceTree = "<group>"; };
@@ -133,6 +136,7 @@
 		45BAFF6AAEEA677FEC492CEC /* TWInputStationViewTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWInputStationViewTest.swift; sourceTree = "<group>"; };
 		45BAFF7AF24423BC2098D962 /* TWLayoutExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLayoutExtensions.swift; sourceTree = "<group>"; };
 		45BAFF94798FEB6B9910D942 /* TWTestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWTestHelper.swift; sourceTree = "<group>"; };
+		45BAFF9E01F2B7B36C859536 /* TWOtherCalculatorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWOtherCalculatorTest.swift; sourceTree = "<group>"; };
 		4677A0B84D44F8BA6A2BF88C /* Pods-TestThoughtWorksTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestThoughtWorksTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestThoughtWorksTests/Pods-TestThoughtWorksTests.debug.xcconfig"; sourceTree = "<group>"; };
 		489051781E980C470013AD68 /* TestThoughtWorks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestThoughtWorks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4890517B1E980C470013AD68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -232,6 +236,7 @@
 				45BAF9FE998AC002AB295B47 /* TWLinesAndStationsProviderTest.swift */,
 				45BAF043872766D6B02DE3B7 /* TWPathCalculatorTest.swift */,
 				45BAF8AC0D64270F03AFC42A /* TWLinesAndStationsProviderFake.swift */,
+				45BAFF9E01F2B7B36C859536 /* TWOtherCalculatorTest.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -356,6 +361,7 @@
 				45BAF174AFA3D3A871883B5C /* TWFastestPathCalculator.swift */,
 				45BAF936CC6D0B6CC96A61B3 /* TWPathCalculator.swift */,
 				45BAF7F9F967632B907659A6 /* TWPathResult.swift */,
+				45BAFBFE3696A43D9EE30BB1 /* TWOtherCalculator.swift */,
 			);
 			path = calculations;
 			sourceTree = "<group>";
@@ -676,6 +682,7 @@
 				45BAF282657E06957430F2F1 /* TWStringExtensions.swift in Sources */,
 				45BAFBF6AE3FB166EB10963C /* UIBezierExtension.swift in Sources */,
 				45BAF331197FA5B16E5BA9A7 /* TWMetroTitleLayer.swift in Sources */,
+				45BAF8BB0FC092ABA94EF851 /* TWOtherCalculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -699,6 +706,7 @@
 				45BAF2DEA2D8CAE5F23F5517 /* TWInputStationViewModelFake.swift in Sources */,
 				45BAF5EF87DD2529C389E55A /* TWInputStationViewTest.swift in Sources */,
 				45BAF11C5D31D0563BBA6837 /* TWCityMapViewModelTest.swift in Sources */,
+				45BAFE775C7ACCBF837294F6 /* TWOtherCalculatorTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
